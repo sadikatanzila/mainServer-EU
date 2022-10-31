@@ -1,0 +1,239 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage_admin.master.cs" Inherits="admin_MasterPage_admin" %>
+<%@ Register Assembly="FlashControl" Namespace="Bewise.Web.UI.WebControls" TagPrefix="Bewise" %>
+ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+     <title>Eastern University Web Portal</title>
+    <link href="../App_themes/jind.css" rel="stylesheet" type="text/css"/>
+    <link  href="../App_themes/transmenuh.css" type="text/css" rel="stylesheet" />
+    <script language="javascript" type="text/javascript" src="../App_themes/transmenu.js" ></script>
+                     
+    
+</head>
+<body style=" background:#cccccc url(../images/bg.gif); margin-left:0; margin-top:0; margin:0; "  >
+  <form id="form1" runat="server">
+  <div align="center">
+  <center>	
+
+      <div id="mastheadInner" style="width: 1200px; height: 120px; background-color: #00ccff;" align="center">
+            <table class="MainHeader" id="tblHeader" cellspacing="0" cellpadding="0" width="100%" align="right" border="0" runat="server">
+               <tbody>
+                <tr> 
+                    <td valign="top" align="center" style="height: 12px; background-color:#00ccff">
+                        &nbsp;&nbsp;
+                    </td>
+                </tr>
+               </tbody>
+            </table>
+          
+        </div>          
+
+         <div id="Div2" class="div_menu_top">
+            <table  id="Table1" style="background:url(../images/bg.gif) #eeeeef; text-align:left;" class="MainHeader" cellspacing="0" cellpadding="0" width="100%" align="right" border="0" runat="server">
+               <tbody>
+                <tr> 
+                    <td style="height: 20px" >
+                        <div id="menu" onclick="return menu_onclick()">
+                            <table>
+                                <tr>
+                                    <td><a id="home" class="mainlevel-trans" href="http://www.easternuni.edu.bd">HOME</a></td>
+                                    <td><a id="HR" class="mainlevel-trans" href="#">HR</a></td>
+                                    <td><a id="FORMS" class="mainlevel-trans" href="#">FORMS</a></td>
+                                    <td><a id="courses" class="mainlevel-trans" href="#">COURSES</a></td>
+                                    <td><a id="result" class="mainlevel-trans" href="#">RESULT</a></td>
+                                    <td><a id="staffs" class="mainlevel-trans" href="_add_student_advisor.aspx">STAFFS</a></td>
+                                    <td><a id="account" class="mainlevel-trans" href="#">ACCOUNT</a></td>
+                                    <td><a id="notice_event" class="mainlevel-trans" href="#">NOTICE/EVENTS</a></td>
+                                    <td><a id="message" class="mainlevel-trans" href="#">MESSAGE</a></td>
+                                     <td><a id="routine" class="mainlevel-trans" href="#">ROUTINE</a></td>
+                                    <td><a id="clearence" class="mainlevel-trans" href="#">CLEARENCE</a></td>
+                                    <td><a id="convocation" class="mainlevel-trans" href="#">CONVOCATION</a></td>
+                                  <!--  <td><a id="link" class="mainlevel-trans" href="#">LINKS</a></td>-->
+                                    <td><a id="logout" class="mainlevel-trans" href="_login.aspx">LOGOUT</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <script type="text/javascript" language="javascript">
+
+                                function menu_onclick() {}
+                                
+                                if (TransMenu.isSupported()) 
+                                {                                   
+                                    var ms = new TransMenuSet(TransMenu.direction.down, 1, 0, TransMenu.reference.bottomLeft);
+    
+//	                                var menu0 = ms.addMenu(document.getElementById("home")); 
+//	                                menu0.addItem("EU Home","../../www.easternuni.edu.bd");	                                 
+                                    var menu9 = ms.addMenu(document.getElementById("HR"));
+                                    menu9.addItem("Employee Attendance Report", "../employee/_viewAttendance.aspx");
+                                    menu9.addItem("Teacher wise Attendance Report", "_teacherAttendance.aspx");
+
+
+                                    var menu10 = ms.addMenu(document.getElementById("FORMS"));
+                                    menu10.addItem("HR", "_formsHR.aspx");
+                                    menu10.addItem("Accounts and Finance", "_formsAcntFinance.aspx");
+                                    menu10.addItem("Procurement and Logistics", "_formsLogistics.aspx");
+                                    menu10.addItem("Exam Controller’s Office", "_formsExamController.aspx");
+                                    menu10.addItem("Dean/ Chairperson/ Coordinator", "_formsDean.aspx");
+
+
+                                    var menu1 = ms.addMenu(document.getElementById("courses"));
+                                    menu1.addItem("Course List", "_semester_course_list.aspx");
+                                    menu1.addItem("Offering Dates", "_offeringDate.aspx");
+                                  //  menu1.addItem("Teacher Evaluation", "_course_teacherEvalList.aspx");
+                                    menu1.addItem("Teacher Evaluation", "_course_teacherEvalListNew.aspx");
+                                    menu1.addItem("Teacher Evaluation Summery", "_course_teacherEvalSummery.aspx");
+                                    //================================================================================================
+
+                                    var menu1 = ms.addMenu(document.getElementById("result"));
+                                    menu1.addItem("Result Publish", "_final_result_publish.aspx");
+                                     
+                                    //================================================================================================
+                                    var menu2 = ms.addMenu(document.getElementById("staffs"));
+                                    menu2.addItem("New Staff", "#");
+                                    menu2.addItem("Active/Inactive", "_teacheractiveInactive.aspx");
+                                    menu2.addItem("Student advisor", "_add_student_advisor.aspx");
+                                    
+                                     var submenu0 = menu2.addMenu(menu2.items[0]);
+                                     submenu0.addItem("Teacher", "_add_teacher.aspx");
+                                     submenu0.addItem("General Staff", "_add_staff.aspx");
+
+                                    //================================================================================================
+                                    var menu3 = ms.addMenu(document.getElementById("account"));
+                                    menu3.addItem("Teacher & Official","#");                                    
+                                    menu3.addItem("Student","#");
+                                    
+                                    var subMenu30=menu3.addMenu(menu3.items[0]);
+                                    subMenu30.addItem("Active/Inactive","_teacheractiveInactive.aspx");
+                                    subMenu30.addItem("Reset Password","_teacherPasswordReset.aspx");
+                                    
+                                    var subMenu31=menu3.addMenu(menu3.items[1]);
+                                    subMenu31.addItem("Active/Inactive","_studentAcive_inactive.aspx");
+                                    subMenu31.addItem("Reset Password","_studentPasswordReset.aspx");
+                                    subMenu31.addItem("generate password","generatePass_student.aspx");
+                                     subMenu31.addItem("Upload Image","_uploadPicturet.aspx");
+                                    
+                                    
+                                    
+                                    //================================================================================================
+                                  
+                                    var menu4 = ms.addMenu(document.getElementById("notice_event"));
+                                     menu4.addItem("Notice", "#");
+                                     menu4.addItem("News/Events", "#");
+                                      menu4.addItem("Academic Calender", "_academicCalender.aspx");
+                                      menu4.addItem("Holidays", "_holiDays.aspx");
+                                      menu4.addItem("Search Academic Calender", "../Calender/_AcademicCalendarSearch.aspx");
+                                       menu4.addItem("EU Convocation", "../Convocation/_ConvChkInfo.aspx");
+                                      
+                                    
+                                     var submenu0_1 = menu4.addMenu(menu4.items[0]);
+                                     submenu0_1.addItem("New Notice", "_newNotice.aspx");
+                                     submenu0_1.addItem("Notice List", "_noticeList.aspx");
+                                    
+                                     var submenu0_2 = menu4.addMenu(menu4.items[1]);
+                                     submenu0_2.addItem("New News/Events", "_newNewsEvent.aspx");
+                                     submenu0_2.addItem("News/Events List", "_newsEventsList.aspx"); 
+                                    //======================================================================
+                                     var menu5 = ms.addMenu(document.getElementById("message"));
+                                  
+                                    menu5.addItem("Individual Message", "_newMessage.aspx");
+                                    menu5.addItem("Message List", "_messageList.aspx");  
+                                  
+                                    
+                                    
+                                    //======================================================
+                                    //======================================================================
+                                     var menu6 = ms.addMenu(document.getElementById("routine"));
+                                     menu6.addItem("Individual Routine", "_StudentRoutine.aspx");
+                                    
+                                    //================================================================================================
+                                    var menu7 = ms.addMenu(document.getElementById("clearence"));
+                                     menu7.addItem("Result View Clearence", "_resultView_Clearance.aspx");
+                                    menu7.addItem("Accounce Clearence", "_accounceClearence.aspx");
+                                    menu7.addItem("Admit Card Clearence", "_AdmitCardClearance.aspx");
+                                    menu7.addItem("Print Admit Card", "_PrntAdmitCard.aspx");
+                                    menu7.addItem("Library Clearence", "_libraryClearence.aspx");                                    
+	                                
+	                                 //================================================================================================
+                                    var menu8 = ms.addMenu(document.getElementById("convocation"));
+                                     menu8.addItem("Registered Student", "_ConvoRegStds.aspx"); 
+                                     menu8.addItem("Registered Student View", "_ConvoRegStdudent.aspx"); 
+                                     menu8.addItem("Student Clearence", "_ConStdClearance.aspx");   
+                                     menu8.addItem("Permitted Student", "_ConvoStdInfoChk.aspx");                                      
+                                     menu8.addItem("Extra Added Student", "_ConvoAddNewStdudent.aspx");
+                                     menu8.addItem("Vourcher No", "_ConvoVourcherNo.aspx");
+                                     menu8.addItem("Registration", "../Convocation/_ConvChkInfo.aspx");
+                                    
+                                     
+                                     
+                                    
+                                    // write drop downs into page
+                                    //==================================================================================================
+                                    // this method writes all the HTML for the menus into the page with document.write(). It must be
+                                    // called within the body of the HTML page.
+                                    //==================================================================================================
+  
+                                    TransMenu.renderAll();
+                                } 
+			                            init1=function(){TransMenu.initialize();}
+			                            if (window.attachEvent) {
+				                            window.attachEvent("onload", init1);
+			                            }else{
+				                            TransMenu.initialize();			
+			                            }
+                              </script> 
+                        
+                    </td>
+                </tr> 
+               </tbody>
+            </table>
+        </div>   
+ 
+    <div>
+      <table class="table_main_table" border="0" id="AutoNumber1" cellpadding="0px" cellspacing="0px" >
+      <tr>  
+          <td style=" width:100%; vertical-align:top; background:#eeeeee; background:url(../images/bg.gif) #eeeeef; "> 
+              
+                            
+              <div id="content_div" style="float:right; background-color:White; width:85%; height:100%;">
+                  <asp:ContentPlaceHolder ID="ContentPlaceHolder_tracker" runat="server">
+                  </asp:ContentPlaceHolder>
+                  
+                   <asp:ContentPlaceHolder ID="ContentPlaceHolder_definition" runat="server">
+                  </asp:ContentPlaceHolder>
+                            
+                  <asp:ContentPlaceHolder ID="ContentPlaceHolder_content" runat="server">
+                  </asp:ContentPlaceHolder>
+              </div>
+              
+              
+          </td>  
+      </tr>
+      
+      <tr>
+        <td style="background-color:#99ccff;">
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="footertext" valign="top" style="height: 24px">
+                        Main Campus : </td>
+                    <td class="footertext" style="width: 483px; height: 24px;" valign="top">
+                     
+                     
+                        House#26, Road# 05, Dhanmondi, Dhaka, Bangladesh. Tel:+880.2.9676031-5
+                        <br />
+                        Fax: +88 02 9676031-5, +880.2.9676031-5. Email: info@easternuni.edu.bd
+                    </td>
+                </tr>
+            </table>
+            
+        </td>
+      </tr>
+      </table>  
+    </div>
+  </center>		
+</div>
+</form>
+</body>
+</html>

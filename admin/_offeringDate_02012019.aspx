@@ -1,0 +1,538 @@
+<%@ Page Language="C#" MasterPageFile="~/employee/CommonStaffFacuty.master" AutoEventWireup="true" CodeFile="_offeringDate_02012019.aspx.cs" Inherits="admin_offeringDate_02012019" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_tracker" Runat="Server">
+    <table border="0" style="text-align: left">
+        <tr>
+            <td colspan="3" style="text-align: left">
+                <span style="color: #ffa500">Your location- Course&gt;Offering Date</span></td>
+        </tr>
+    </table>
+    
+ <script language="javascript" type="text/javascript">
+  
+  function loadCalender_stOpening()
+{
+  window.open('html/CalenderST_opening.htm','','titlebar=no,toolbar=no,scrollbars=false,resizable=false,height=170,width=300');
+  return false;
+} 
+
+function loadCalender_stClosing()
+{
+  window.open('html/CalenderST_closing.htm','','titlebar=no,toolbar=no,scrollbars=false,resizable=false,height=170,width=300');
+  return false;
+} 
+
+function loadCalender_thOPening()
+{
+  window.open('html/CalenderTH_closing.htm','','titlebar=no,toolbar=no,scrollbars=false,resizable=false,height=170,width=300');
+  return false;
+} 
+
+function loadCalender_thClosing()
+{
+  window.open('html/CalenderTH_opening.htm','','titlebar=no,toolbar=no,scrollbars=false,resizable=false,height=170,width=300');
+  return false;
+}
+
+function loadCalender_thReOPening() {
+    window.open('html/CalenderTH_re_closing.htm', '', 'titlebar=no,toolbar=no,scrollbars=false,resizable=false,height=170,width=300');
+    return false;
+}
+
+function loadCalender_thReClosing() {
+    window.open('html/CalenderTH_re_opening.htm', '', 'titlebar=no,toolbar=no,scrollbars=false,resizable=false,height=170,width=300');
+    return false;
+} 
+
+function loadCalender_result()
+{
+  window.open('html/cal_result_publish.htm','','titlebar=no,toolbar=no,scrollbars=false,resizable=false,height=170,width=300');
+  return false;
+} 
+
+function loadCalender_teacher_eval_open()
+{
+  window.open('html/Cal_teach_eval_opening.htm','','titlebar=no,toolbar=no,scrollbars=false,resizable=false,height=170,width=300');
+  return false;
+} 
+
+function loadCalender_teacher_eval_close()
+{
+  window.open('html/Cal_teach_eval_closing.htm','','titlebar=no,toolbar=no,scrollbars=false,resizable=false,height=170,width=300');
+  return false;
+} 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+function load_FinalAdmitCard_open()
+{
+  window.open('html/cal_FinalAdmitCard_opening.htm','','titlebar=no,toolbar=no,scrollbars=false,resizable=false,height=170,width=300');
+  return false;
+}  
+  
+function load_FinalAdmitCard_closing()
+{
+  window.open('html/cal_FinalAdmitCard_closing.htm','','titlebar=no,toolbar=no,scrollbars=false,resizable=false,height=170,width=300');
+  return false;
+} 
+function load_MidAdmitCard_open()
+{
+  window.open('html/cal_MidAdmitCard_opening.htm','','titlebar=no,toolbar=no,scrollbars=false,resizable=false,height=170,width=300');
+  return false;
+} 
+function load_MidAdmitCard_closing()
+{
+  window.open('html/cal_MidAdmitCard_closing.htm','','titlebar=no,toolbar=no,scrollbars=false,resizable=false,height=170,width=300');
+  return false;
+} 
+  
+  
+  
+  
+  
+  
+  function chech_valid()
+  {  
+      if (document.getElementById("ctl00_ContentPlaceHolder_definition_txt_year").value.toString()=="" )
+      {
+            alert("Please enter the year");
+            return false;
+      }
+      else  if (isNaN(document.getElementById("ctl00_ContentPlaceHolder_definition_txt_year").value.toString()))
+      {
+            alert("Please enter a valid year");
+            return false;
+      }
+      else
+            return true;
+  }  
+  
+   function chech_valid_data()
+  {  
+      if (document.getElementById("ctl00_ContentPlaceHolder_definition_txt_student_opening").value.toString()=="" )
+      {
+            alert("Please enter student opening date.");
+            return false;
+      }
+      else  if (document.getElementById("ctl00_ContentPlaceHolder_definition_txt_student_closing").value.toString()=="" )
+      {
+            alert("Please enter student closing date.");
+            return false;
+      }
+      else  if (document.getElementById("ctl00_ContentPlaceHolder_definition_txt_teacher_opening").value.toString()=="" )
+      {
+            alert("Please enter teacher opening date.");
+            return false;
+      }
+      else  if (document.getElementById("ctl00_ContentPlaceHolder_definition_txt_teacher_closing").value.toString()=="" )
+      {
+            alert("Please enter teacher closing date.");
+            return false;
+      }
+       else  if (document.getElementById("ctl00_ContentPlaceHolder_definition_txt_teacher_eval_opening").value.toString()=="" )
+      {
+            alert("Please enter teacher closing date.");
+            return false;
+      }
+       else  if (document.getElementById("ctl00_ContentPlaceHolder_definition_txt_teacher_eval_closing").value.toString()=="" )
+      {
+            alert("Please enter teacher closing date.");
+            return false;
+      }
+       else  if (document.getElementById("ctl00_ContentPlaceHolder_definition_txt_resultPublish").value.toString()=="" )
+      {
+            alert("Please enter teacher closing date.");
+            return false;
+      }
+      else
+            return true;
+  }  
+  
+ </script>   
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_definition" Runat="Server">
+    <table border="0"  width="100%">
+        <tr>
+            <td>
+                <table border="0" cellpadding="0" cellspacing="0" height="1" width="100%">
+                    <tr>
+                        <td colspan="2" height="24" rowspan="3" width="19">
+                            </td>
+                        <td  class="k" height="1" width="100%">
+                            </td>
+                        <td align="right" colspan="2" height="24" rowspan="3" width="15">
+                            </td>
+                    </tr>
+                    <tr>
+                        <td  class="h" height="22" width="100%">
+                            <p align="center">
+                                <b><font  face="Arial" size="2">Offering Date</font></b></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td  class="k" height="1" width="100%">
+                            </td>
+                    </tr>
+                    <tr>
+                        <td  class="k" style="height: 114px" width="1">
+                            </td>
+                        <td bgcolor="white" style="height: 114px" width="18">
+                           </td>
+                        <td bgcolor="#ffffff" style="vertical-align: top" width="100%">
+                            <table border="0" style="width: 100%">
+                                <tr>
+                                    <td class="header" style="height: 10px; background-color: #ffffff; text-align: left">
+                                        <table>
+                                            <tr>
+                                                <td style="width: 45px; height: auto">
+                                                    Select</td>
+                                                <td style="width: auto; height: auto">
+                                                    <asp:DropDownList ID="cmb_semester" runat="server">
+                                                        <asp:ListItem Value="1">Spring</asp:ListItem>
+                                                        <asp:ListItem Value="2">Summer</asp:ListItem>
+                                                        <asp:ListItem Value="3">Fall</asp:ListItem>
+                                                    </asp:DropDownList></td>
+                                                <td style="width: 35px; height: 22px">
+                                                    Year</td>
+                                                <td style="width: 49px; height: 22px">
+                                                    <asp:TextBox ID="txt_year" runat="server" MaxLength="4" Width="40px"></asp:TextBox></td>
+                                                <td style="width: 102px; height: 22px">
+                                                    <asp:Button ID="btn_submit" runat="server" OnClick="btn_submit_Click" Text="Submit" /></td>
+                                            </tr>
+                                        </table>
+                                        <hr />
+                                        <table id="tbl_dates" runat="server" width="80%">
+                                            <tr>
+                                                <td colspan="3">
+                                                    <asp:Label ID="lbl_message" runat="server" Font-Size="X-Small" ForeColor="Red" Text="Label"></asp:Label></td>
+                                                <td colspan="1">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="3">
+                                                    <asp:Label ID="lbl_semHeader" runat="server" Font-Size="Small" ForeColor="DodgerBlue" Text="Label"></asp:Label></td>
+                                                <td colspan="1">
+                                                </td>
+                                            </tr>
+											<tr>
+                                                <td style="" valign="top">Opening Department</td>
+                                                <td style="" valign="top">
+                                                    :</td>
+                                                <td style="" colspan="2">
+                                                    <asp:TextBox ID="txtOpenedDep" runat="server"></asp:TextBox><br />
+                                                    Ex: 40,80 or empty for all<br />
+                                                    10 - Bachelor of Laws with Honours <br />
+                                                    11 - Master of Laws (1Year)<br />
+                                                    12 - Master of Laws (2Years)<br />
+                                                    20 - Bachelor of Business Administration<br />
+                                                    30 - B.A. (Hons) in English<br />
+                                                    31 - Master of Arts<br />
+                                                    40 - Computer Science & Engineering<br />
+                                                    50 - Master in English Language Teaching<br />
+                                                    60 - Master of Business Administration<br />
+                                                    70 - Master of Business Administration<br />
+                                                    80 - Electrical & Electronics Engineering<br />
+                                                    82 - Electronics & Telecommunication Engineering<br />
+                                                    83 - Electronics & Telecommunication Engineering<br />
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="">Student Opening</td>
+                                                <td style="">
+                                                    :</td>
+                                                <td style="">
+                                                   
+                                                  
+                                                     <asp:TextBox ID="txt_student_opening" runat="server" Height="15px" Width="150px"  ></asp:TextBox>
+                                                  
+                                                    <asp:CalendarExtender ID="CalendarExtender_student_opening" runat="server"
+                                                         Format="dd-MMM-yyyy" TargetControlID="txt_student_opening"></asp:CalendarExtender>
+
+                                                    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
+                                                </td>
+                                                <td>
+                                                    
+
+
+                                                </td>
+                                            </tr>
+                                      
+                                            <tr>
+                                                <td>
+                                                    Student Closing</td>
+                                                <td>
+                                                    :</td>
+                                                <td>
+                                                     <asp:TextBox ID="txt_student_closing" runat="server" Height="15px" Width="150px"  ></asp:TextBox>
+                                                    
+                                                    <asp:CalendarExtender ID="CalendarExtender_student_closing" runat="server"
+                                                         Format="dd-MMM-yyyy" TargetControlID="txt_student_closing"></asp:CalendarExtender>
+                                                   </td>
+                                                <td>
+                                                   </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Teacher Opening</td>
+                                                <td>
+                                                    :</td>
+                                                <td>
+                                                      <asp:TextBox ID="txt_teacher_opening" runat="server" Height="15px" Width="150px"  ></asp:TextBox>
+                                                    
+                                                    <asp:CalendarExtender ID="CalendarExtender_teacher_opening" runat="server"
+                                                         Format="dd-MMM-yyyy" TargetControlID="txt_teacher_opening"></asp:CalendarExtender>
+                                                <td>
+                                                   </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Teacher Closing</td>
+                                                <td>
+                                                    :</td>
+                                                <td>
+                                                     <asp:TextBox ID="txt_teacher_closing" runat="server" Height="15px" Width="150px"  ></asp:TextBox>
+                                                    
+                                                    <asp:CalendarExtender ID="CalendarExtender_teacher_closing" runat="server"
+                                                         Format="dd-MMM-yyyy" TargetControlID="txt_teacher_closing"></asp:CalendarExtender>
+
+                                                   </td>
+                                                <td>
+                                                   </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Teacher Re-Opening
+                                                </td>
+                                                <td>
+                                                    :
+                                                </td>
+                                                <td>
+                                                     <asp:TextBox ID="txt_teacher_re_opening" runat="server" Height="15px" Width="150px"  ></asp:TextBox>
+                                                    
+                                                    <asp:CalendarExtender ID="CalendarExtender_teacher_re_opening" runat="server"
+                                                         Format="dd-MMM-yyyy" TargetControlID="txt_teacher_re_opening"></asp:CalendarExtender>
+
+                                                </td>
+                                                <td>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Teacher Re-Closing
+                                                </td>
+                                                <td>
+                                                    :
+                                                </td>
+                                                <td>
+                                                      <asp:TextBox ID="txt_teacher_re_closing" runat="server" Height="15px" Width="150px"  ></asp:TextBox>
+                                                    
+                                                    <asp:CalendarExtender ID="CalendarExtender_teacher_re_closing" runat="server"
+                                                         Format="dd-MMM-yyyy" TargetControlID="txt_teacher_re_closing"></asp:CalendarExtender>
+
+                                                   </td>
+                                                <td>
+                                                 </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    &nbsp;</td>
+                                                <td>
+                                                </td>
+                                                <td>
+                                                </td>
+                                                <td>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Teacher Eval open</td>
+                                                <td>
+                                                    :</td>
+                                                <td>
+                                                     <asp:TextBox ID="txt_teacher_eval_opening" runat="server" Height="15px" Width="150px"  ></asp:TextBox>
+                                                    
+                                                    <asp:CalendarExtender ID="CalendarExtender_teacher_eval_opening" runat="server"
+                                                         Format="dd-MMM-yyyy" TargetControlID="txt_teacher_eval_opening"></asp:CalendarExtender>
+
+                                                   </td>
+                                                <td>
+                                                  </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Teacher Eval close</td>
+                                                <td>
+                                                    :</td>
+                                                <td>
+                                                      <asp:TextBox ID="txt_teacher_eval_closing" runat="server" Height="15px" Width="150px"  ></asp:TextBox>
+                                                    
+                                                    <asp:CalendarExtender ID="CalendarExtender_teacher_eval_closing" runat="server"
+                                                         Format="dd-MMM-yyyy" TargetControlID="txt_teacher_eval_closing"></asp:CalendarExtender>
+</td>
+                                                <td>
+                                                    </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Result Publish on</td>
+                                                <td>
+                                                    :</td>
+                                                <td>
+                                                     <asp:TextBox ID="txt_resultPublish" runat="server" Height="15px" Width="150px"  ></asp:TextBox>
+                                                    
+                                                    <asp:CalendarExtender ID="CalendarExtender_resultPublish" runat="server"
+                                                         Format="dd-MMM-yyyy" TargetControlID="txt_resultPublish"></asp:CalendarExtender>
+</td>
+                                                <td>
+                                                  </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    &nbsp;</td>
+                                                <td>
+                                                    &nbsp;</td>
+                                                <td>
+                                                    &nbsp;</td>
+                                                <td>
+                                                    &nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Final Exam</td>
+                                                <td>
+                                                    &nbsp;</td>
+                                                <td>
+                                                    &nbsp;</td>
+                                                <td>
+                                                    &nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td>                                                    Admit Card Opening</td>
+                                                <td>
+                                                    :</td>
+                                                <td>
+                                                       <asp:TextBox ID="txt_FinalAdmit_opening" runat="server" Height="15px" Width="150px"  ></asp:TextBox>
+                                                    
+                                                    <asp:CalendarExtender ID="CalendarExtender_FinalAdmit_opening" runat="server"
+                                                         Format="dd-MMM-yyyy" TargetControlID="txt_FinalAdmit_opening"></asp:CalendarExtender>
+</td>
+                                                <td>
+                                                    </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Closing</td>
+                                                <td>
+                                                    :</td>
+                                                <td>
+                                                     <asp:TextBox ID="txt_FinalAdmit_closing" runat="server" Height="15px" Width="150px"  ></asp:TextBox>
+                                                    
+                                                    <asp:CalendarExtender ID="CalendarExtender_FinalAdmit_closing" runat="server"
+                                                         Format="dd-MMM-yyyy" TargetControlID="txt_FinalAdmit_closing"></asp:CalendarExtender>
+
+                                                   </td>
+                                                <td>
+                                                    </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    &nbsp;</td>
+                                                <td>
+                                                    &nbsp;</td>
+                                                <td>
+                                                    &nbsp;</td>
+                                                <td>
+                                                    &nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Mid Exam</td>
+                                                <td>
+                                                    &nbsp;</td>
+                                                <td>
+                                                    &nbsp;</td>
+                                                <td>
+                                                    &nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Admit Card Opening</td>
+                                                <td>
+                                                    :</td>
+                                                <td>
+                                                      <asp:TextBox ID="txt_MidAdmit_opening" runat="server" Height="15px" Width="150px"  ></asp:TextBox>
+                                                    
+                                                    <asp:CalendarExtender ID="CalendarExtender_MidAdmit_opening" runat="server"
+                                                         Format="dd-MMM-yyyy" TargetControlID="txt_MidAdmit_opening"></asp:CalendarExtender>
+
+                                                   </td>
+                                                <td>
+                                                   </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Closing</td>
+                                                <td>
+                                                    :</td>
+                                                <td>
+                                                     <asp:TextBox ID="txt_MidAdmit_closing" runat="server" Height="15px" Width="150px"  ></asp:TextBox>
+                                                    
+                                                    <asp:CalendarExtender ID="CalendarExtender_MidAdmit_closing" runat="server"
+                                                         Format="dd-MMM-yyyy" TargetControlID="txt_MidAdmit_closing"></asp:CalendarExtender>
+
+                                                  </td>
+                                                <td>
+                                                   </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                </td>
+                                                <td>
+                                                </td>
+                                                <td>
+                                                    <asp:Button ID="btn_save" runat="server" Text="Submit" OnClick="btn_save_Click" /></td>
+                                                <td>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            &nbsp;</td>
+                        <td bgcolor="white" style="height: 114px" width="14">
+                            &nbsp;
+                            <p>
+                              </p>
+                        </td>
+                        <td  class="k" style="height: 114px" width="1">
+                            </td>
+                    </tr>
+                    <tr>
+                        <td align="left" colspan="2" height="1" rowspan="2" valign="top" width="19">
+                           </td>
+                        <td bgcolor="white" height="1" width="100%">
+                           </td>
+                        <td align="right" colspan="2" height="1" rowspan="2" valign="top" width="15">
+                            </td>
+                    </tr>
+                    <tr>
+                        <td  class="k" height="1" width="100%">
+                           </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder_content" Runat="Server">
+</asp:Content>
+
