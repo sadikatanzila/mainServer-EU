@@ -1,0 +1,236 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="EUPortalMasterPageGeneric.master.cs"
+    Inherits="EUPortalWeb.EUPortalMasterPageGeneric" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Mirrored from www.sothink.com/product/swfcatcher/firefox/index.php by HTTrack Website Copier/3.x [XR&CO'2008], Mon, 10 May 2010 10:37:11 GMT -->
+<head>
+    <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Eastern University | Web Portal</title>
+    <meta name="Description" content="Flash Downloader For Firefox - Free Flash downloader, cute Firefox plug-in for Flash save, SWF download. Easily save rich SWF format media from Firefox with great speed. One-click Flash download without copying & pasting URL." />
+    <meta name="keywords" content="flash save, flash download, animation download, swf download, flash downloader, flash capture, flash download plugin, flash download software" />
+    <!-- InstanceEndEditable -->
+    <link href="../style/main.css" rel="stylesheet" type="text/css" />
+    <link href="style/main.css" rel="stylesheet" type="text/css" />
+    <link rel="Shortcut Icon" href="http://www.sothink.com/favicon.ico" type="image/x-icon" />
+    <!--[if lte IE 6]>
+<link href="/style/style_blue/css/ie6.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/include/js/ie6-png.js" ></script>
+<![endif]-->
+    <!-- InstanceBeginEditable name="head" -->
+    <style type="text/css">
+        <!
+        -- .style1
+        {
+            color: #CC6666;
+        }
+        .style2
+        {
+            color: #CC6666;
+            font-size: 12px;
+        }
+        -- ></style>
+    <!-- InstanceEndEditable -->
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+           <!-- Top -->
+            <div class="pagewidth">
+                <div id="top-box">
+                    <div id="toplink">
+                    </div>
+                    <div id="logo">
+                        <a href="#">
+                            <img src="style/style_blue/images/dot-tran.gif" alt="Home" title="Go Home"
+                                width="270" height="68" /></a></div>
+                    <div id="key">
+                        <div id="area1">
+
+                            <script type="text/javascript" src="style/style_blue/js/top-area1.js"></script>
+
+                        </div>
+                        <div id="area2">
+
+                            <script type="text/javascript" src="style/style_blue/js/top-area2.js"></script>
+
+                        </div>
+                    </div>
+                    <!-- Top menu -->
+                    <!-- InstanceBeginEditable name="topmenu" -->
+                    <div id="menu">
+                        <ul>
+                            <li id="menu-first"><a href="#">Home</a></li>
+                            <li><a class="hide" href="#">Academics</a>
+                                <!--[if lte IE 6]>
+<a href="/product.htm">Products
+<table><tr><td>
+<![endif]-->
+                                <ul>
+                                    <li id="submenu-title"><a href="#">Academics Regulations</a></li>
+                                    <li><a href="#" title="Sothink SWF Decompiler">Adminssin & Registration</a></li>
+                                    <li><a href="#" title="Sothink SWF Decompiler">Course & Tution Fees</a></li>
+                                    <li><a href="#" title="Sothink SWF Decompiler">Academic Calender</a></li>
+                                </ul>
+                                <!--[if lte IE 6]>
+</td></tr></table>
+</a>
+<![endif]-->
+                            </li>
+                            <li><a class="hide" href="javascript:">Faculties</a>
+                                <!--[if lte IE 6]>
+<a href="javascript:">Purchase
+<table><tr><td>
+<![endif]-->
+                                <ul>
+                                    <li id="submenu-title"><a href="#">List of Faculty</a></li>
+                                    <li><a href="#" title="Shopping Cart">Faculty of E & T</a></li>
+                                    <li><a href="#" title="Bundle Deals">Faculty of Business Administration</a></li>
+                                    <li><a href="#" title="Discount Programs">Faculty of Arts</a></li>
+                                    <li><a href="#" title="Discount Programs">Faculty of Law</a></li>
+                                </ul>
+                                <!--[if lte IE 6]>
+</td></tr></table>
+</a>
+<![endif]-->
+                            </li>
+                            <li><a class="hide" href="#">Library</a>
+                                <!--[if lte IE 6]>
+<a href="/support/index.php">Support
+<table><tr><td>
+<![endif]-->
+                                <!--        <ul>
+          <li id="submenu-title">Contact Support</li>
+          <li><a href="http://www.sothink.com/support/tickets/ticket.php" title="Submit Support Requests">Submit Support Requests</a></li>
+          <li><a href="http://www.sothink.com/support/comment/comment.php" title="Leave a Comment">Leave a Comment</a></li>
+          <li id="submenu-title">Customer Self-help</li>
+          <li><a href="http://www.sothink.com/support/regcode/regcode.php" title="Retrieve a Key">Retrieve a Key</a></li>
+          <li><a href="http://www.sothink.com/purchase/orderhelp.htm" title="Order Help">Order Help</a></li>
+          <li><a href="http://www.sothink.com/support/index.php" title="Product Help">Product Help</a></li>
+          <li><a href="http://www.sothink.com/tutorials/" title="Tutorial Center">Tutorial Center</a></li>
+          <li><a href="http://www.sothink.com/phpBB2/index.php" title="Support Forum">Support Forum</a></li>
+        </ul>
+-->
+                                <!--[if lte IE 6]>
+</td></tr></table>
+</a>
+<![endif]-->
+                            </li>
+                            <li><a class="hide" href="#">Facilities</a>
+                                <!--[if lte IE 6]>
+<a href="javascript:">Join Affiliate
+<table><tr><td>
+<![endif]-->
+                                <!--        <ul>
+          <li><a href="http://www.sothink.com/affiliate/affiliate.htm" title="Affiliate Program">Affiliate Program</a></li>
+          <li><a href="http://www.sothink.com/affiliate/reseller.htm" title="Reseller Program">Reseller Program</a></li>
+        </ul>-->
+                                <!--[if lte IE 6]>
+</td></tr></table>
+</a>
+<![endif]-->
+                            </li>
+                            <li><a class="hide" href="javascript:">Administration</a>
+                                <!--[if lte IE 6]>
+<a href="javascript:">Community
+<table><tr><td>
+<![endif]-->
+                                <!-- <ul>
+          <li><a href="http://www.sothink.com/community/ces/share.php" title="Story Share">Story Share</a></li>
+          <li><a href="http://www.sothink.com/community/exhibition/" title="User Gallery">User Gallery</a></li>
+          <li><a href="http://www.sothink.com/community/newsletter/maillist-sub.php" title="Newsletter">Newsletter</a></li>
+        </ul>-->
+                                <!--[if lte IE 6]>
+</td></tr></table>
+</a>
+<![endif]-->
+                            </li>
+                            <li><a href="#">About EU</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div id="area3">
+
+                        <script type="text/javascript" src="style/style_blue/js/top-area3.js"></script>
+
+                    </div>
+                    <!-- InstanceEndEditable -->
+                    <!-- Top menu End -->
+                </div>
+            </div>
+            <!-- Top End-->
+            <!-- page banner -->
+            <div class="pagewidth">
+                <div id="nav">
+                    <!-- InstanceBeginEditable name="nav" -->
+                    <!-- InstanceEndEditable -->
+                </div>
+            </div>
+            <!-- page banner End -->
+            <!-- page banner -->
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+     
+            
+            
+        </asp:ContentPlaceHolder>
+        <div id="foot-box">
+                <div class="pagewidth">
+                    <div id="bottom-content">
+                        <a href="#">
+                            <img src="../../../style/style_blue/images/sothink-logo-bottom.png" alt="Home" width="111"
+                                height="106" align="left" />
+                                <%--<img src="style/style_blue/images/sothink-logo-bottoms.png" alt="Home" width="111"
+                                height="106" align="left" />--%>
+                                </a>
+                        <div id="botton-content">
+                            <!-- InstanceBeginEditable name="foot-link" -->
+                            <div>
+                                <p>
+                                    &nbsp;</p>
+                            </div>
+                            <p align="center">
+                                <%--Copyright &copy; Eastern University--%>
+                            </p>
+                            <p align="center">
+                                Bangladesh under registration number : XXXX-COPR
+                            </p>
+                            <p>
+
+                                <script type="text/javascript" src="style/style_blue/js/bottom-link.js"></script>
+
+                                <script type="text/javascript">
+                                    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+                                    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+                                 </script>
+
+                                 <script type="text/javascript">
+                                    try {
+                                    var pageTracker = _gat._getTracker("UA-199040-2");
+                                    pageTracker._trackPageview();
+                                    } catch(err) {}
+                                </script>
+
+                            </p>
+                            <!-- InstanceEndEditable -->
+                        </div>
+                        <img src="style/style_blue/images/bg-bottom-line.png" width="1" height="109" align="left"
+                            alt="1234" />
+                        <div id="bottom-product">
+                            <!-- InstanceBeginEditable name="bottom-product" -->
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li><a href="#" target="_blank" style="line-height: 32px;">
+                                </a></li>
+                                <li><a href="#" target="_blank" style="line-height: 32px;">Powered BY EUIT </a></li>
+                            </ul>
+                            <!-- InstanceEndEditable -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </form>
+</body>
+</html>

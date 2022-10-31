@@ -1,0 +1,542 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B85D0057-6E80-498D-A61A-C7896C4A39F2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EUPortalWeb</RootNamespace>
+    <AssemblyName>EUPortalWeb</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="SyrinxMenu, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\SyrinxMenu.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="StockService.asmx" />
+    <Content Include="UserControl\write_format.ascx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommonClass\clsDateValidation.cs" />
+    <Compile Include="CommonClass\GenericToDataTable.cs" />
+    <Compile Include="EUPortalMasterPage.master.cs">
+      <DependentUpon>EUPortalMasterPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EUPortalMasterPage.master.designer.cs">
+      <DependentUpon>EUPortalMasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="EUPortalMasterPageGeneric.Master.cs">
+      <DependentUpon>EUPortalMasterPageGeneric.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EUPortalMasterPageGeneric.Master.designer.cs">
+      <DependentUpon>EUPortalMasterPageGeneric.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Handler.ashx.cs">
+      <DependentUpon>Handler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CommonClass\MessageBox.cs" />
+    <Compile Include="Pages\DetailMessage.aspx.cs">
+      <DependentUpon>DetailMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\DetailMessage.aspx.designer.cs">
+      <DependentUpon>DetailMessage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MessageSetup.aspx.cs">
+      <DependentUpon>MessageSetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MessageSetup.aspx.designer.cs">
+      <DependentUpon>MessageSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NewsAndEventsArchieve.aspx.cs">
+      <DependentUpon>NewsAndEventsArchieve.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\NewsAndEventsArchieve.aspx.designer.cs">
+      <DependentUpon>NewsAndEventsArchieve.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NewsAndEventsDetail.aspx.cs">
+      <DependentUpon>NewsAndEventsDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\NewsAndEventsDetail.aspx.designer.cs">
+      <DependentUpon>NewsAndEventsDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NoticeBoardArchieve.aspx.cs">
+      <DependentUpon>NoticeBoardArchieve.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\NoticeBoardArchieve.aspx.designer.cs">
+      <DependentUpon>NoticeBoardArchieve.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NoticeBoardDetail.aspx.cs">
+      <DependentUpon>NoticeBoardDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\NoticeBoardDetail.aspx.designer.cs">
+      <DependentUpon>NoticeBoardDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WelcomeMessageSetup.aspx.cs">
+      <DependentUpon>WelcomeMessageSetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\WelcomeMessageSetup.aspx.designer.cs">
+      <DependentUpon>WelcomeMessageSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NoticeSetup.aspx.cs">
+      <DependentUpon>NoticeSetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\NoticeSetup.aspx.designer.cs">
+      <DependentUpon>NoticeSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NewsAndEventsSetup.aspx.cs">
+      <DependentUpon>NewsAndEventsSetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\NewsAndEventsSetup.aspx.designer.cs">
+      <DependentUpon>NewsAndEventsSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Unauthorised.aspx.cs">
+      <DependentUpon>Unauthorised.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Unauthorised.aspx.designer.cs">
+      <DependentUpon>Unauthorised.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Sales.cs">
+      <DependentUpon>Sales.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\dsSales.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsSales.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\dsStockIssue.cs">
+      <DependentUpon>dsStockIssue.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\dsStockIssue.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsStockIssue.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\StockIssue.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StockIssue.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StockService.asmx.cs">
+      <DependentUpon>StockService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControl\FooterTitle.ascx.cs">
+      <DependentUpon>FooterTitle.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\FooterTitle.ascx.designer.cs">
+      <DependentUpon>FooterTitle.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\GroupHeader.ascx.cs">
+      <DependentUpon>GroupHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\GroupHeader.ascx.designer.cs">
+      <DependentUpon>GroupHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\HeaderTitle.ascx.cs">
+      <DependentUpon>HeaderTitle.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\HeaderTitle.ascx.designer.cs">
+      <DependentUpon>HeaderTitle.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\SyrinxMenu.ascx.cs">
+      <DependentUpon>SyrinxMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\SyrinxMenu.ascx.designer.cs">
+      <DependentUpon>SyrinxMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\write_format.ascx.cs">
+      <DependentUpon>write_format.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ARAS.Karnel\ARAS.Karnel.csproj">
+      <Project>{2F7458D6-C853-4E9A-8F53-BDF9F9A73552}</Project>
+      <Name>ARAS.Karnel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EUPortal\EUPortal.csproj">
+      <Project>{D7DA4C43-5741-4D15-85FD-AFB01FB24335}</Project>
+      <Name>EUPortal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Default\BgPageTitle.gif" />
+    <Content Include="App_Themes\Default\BgPageTitle_.gif" />
+    <Content Include="App_Themes\Default\btn_bg_m.gif" />
+    <Content Include="App_Themes\Default\Button.gif" />
+    <Content Include="App_Themes\Default\calendar-system.css" />
+    <Content Include="App_Themes\Default\grd_head.gif" />
+    <Content Include="App_Themes\Default\grd_head__.gif" />
+    <Content Include="App_Themes\Default\Style.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Blue\BgPageTitle.gif" />
+    <Content Include="App_Themes\Blue\BgPageTitle_.gif" />
+    <Content Include="App_Themes\Blue\btn_bg_m.gif" />
+    <Content Include="App_Themes\Blue\calendar-system.css" />
+    <Content Include="App_Themes\Blue\grd_head.gif" />
+    <Content Include="App_Themes\Blue\grd_head__.gif" />
+    <Content Include="App_Themes\Blue\Style.css" />
+    <Content Include="App_Themes\Default\Controls.skin" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Blue\Controls.skin" />
+    <Content Include="App_Themes\redmond\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="App_Themes\redmond\images\ui-bg_flat_55_fbec88_40x100.png" />
+    <Content Include="App_Themes\redmond\images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="App_Themes\redmond\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="App_Themes\redmond\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="App_Themes\redmond\images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="App_Themes\redmond\images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="App_Themes\redmond\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="App_Themes\redmond\images\ui-icons_217bc0_256x240.png" />
+    <Content Include="App_Themes\redmond\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="App_Themes\redmond\images\ui-icons_469bdd_256x240.png" />
+    <Content Include="App_Themes\redmond\images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="App_Themes\redmond\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="App_Themes\redmond\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="App_Themes\redmond\images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="App_Themes\redmond\jquery-ui-1.7.2.custom.css" />
+    <Content Include="App_Themes\redmond\ui.accordion.css" />
+    <Content Include="App_Themes\redmond\ui.all.css" />
+    <Content Include="App_Themes\redmond\ui.base.css" />
+    <Content Include="App_Themes\redmond\ui.core.css" />
+    <Content Include="App_Themes\redmond\ui.datepicker.css" />
+    <Content Include="App_Themes\redmond\ui.dialog.css" />
+    <Content Include="App_Themes\redmond\ui.progressbar.css" />
+    <Content Include="App_Themes\redmond\ui.resizable.css" />
+    <Content Include="App_Themes\redmond\ui.slider.css" />
+    <Content Include="App_Themes\redmond\ui.tabs.css" />
+    <Content Include="App_Themes\redmond\ui.theme.css" />
+    <Content Include="Images\AC.bmp" />
+    <Content Include="Images\ajax-loader.gif" />
+    <Content Include="Images\ajaxLoader.gif" />
+    <Content Include="Images\arrow.gif" />
+    <Content Include="Images\arrow2.gif" />
+    <Content Include="Images\arrowDown.gif" />
+    <Content Include="Images\arrowDown2.gif" />
+    <Content Include="Images\back.png" />
+    <Content Include="Images\bill_collected.png" />
+    <Content Include="Images\bill_tobe_collect.png" />
+    <Content Include="Images\blackLine.gif" />
+    <Content Include="Images\btn_bg_m.gif" />
+    <Content Include="Images\Calendar.gif" />
+    <Content Include="Images\Calendar_scheduleHS.png" />
+    <Content Include="Images\close-up-combination-lock_~b01962.jpg" />
+    <Content Include="Images\close.gif" />
+    <Content Include="Images\closed-padlock-key_~V3047046.jpg" />
+    <Content Include="Images\combination-lock_~bxp26604.jpg" />
+    <Content Include="Images\Cus.bmp" />
+    <Content Include="Images\dot_horz.gif" />
+    <Content Include="Images\Footer.png" />
+    <Content Include="Images\GroupPoint.png" />
+    <Content Include="Images\HeaderBackground.png" />
+    <Content Include="Images\HeaderBackground_.png" />
+    <Content Include="Images\img01.gif" />
+    <Content Include="Images\load_cheque.jpeg" />
+    <Content Include="Images\lock-key_~EV208-056.jpg" />
+    <Content Include="Images\lock_n_key.jpg" />
+    <Content Include="Images\login.bmp" />
+    <Content Include="Images\Lookup.gif" />
+    <Content Include="Images\MenuBackground.png" />
+    <Content Include="Images\MenuSeparator.png" />
+    <Content Include="Images\m_head_blend.png" />
+    <Content Include="Images\next.gif" />
+    <Content Include="Images\next.png" />
+    <Content Include="Images\PageHeaderBackground.png" />
+    <Content Include="Images\prev.gif" />
+    <Content Include="Images\progress22.gif" />
+    <Content Include="Images\progress222.gif" />
+    <Content Include="Images\progress2222.gif" />
+    <Content Include="Images\scotia_bkgrnd_bottom.png" />
+    <Content Include="Images\stop_blue.png" />
+    <Content Include="Images\Updating.gif" />
+    <Content Include="Images\_back.png" />
+    <Content Include="Images\_next.png" />
+    <Content Include="login.aspx" />
+    <Content Include="Pages\Home.aspx" />
+    <Content Include="Pages\NoticeSetup.aspx" />
+    <Content Include="Pages\NewsAndEventsSetup.aspx" />
+    <Content Include="Script\calendar-en.js" />
+    <Content Include="Script\calendar-setup.js" />
+    <Content Include="Script\calendar.js" />
+    <Content Include="Script\jquery-1.3.2.js" />
+    <Content Include="Script\jquery-framedialog-0.6.js" />
+    <Content Include="Script\Menu\arrow_b.gif" />
+    <Content Include="Script\Menu\arrow_g.gif" />
+    <Content Include="Script\Menu\arrow_r.gif" />
+    <Content Include="Script\Menu\arrow_w.gif" />
+    <Content Include="Script\Menu\blank.gif" />
+    <Content Include="Script\Menu\fade.gif" />
+    <Content Include="Script\Menu\line.gif" />
+    <Content Include="Script\Menu\MyMenu.js" />
+    <Content Include="Script\Menu\pane.gif" />
+    <Content Include="Script\Menu\stm31.js" />
+    <Content Include="Script\ui.core.js" />
+    <Content Include="Script\ui.dialog.js" />
+    <Content Include="Script\ui.draggable.js" />
+    <Content Include="Script\XTab.js" />
+    <Content Include="UserControl\GroupHeader.ascx" />
+    <Content Include="UserControl\SyrinxMenu.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\Sales.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Sales.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\StockIssue.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StockIssue.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Handler.ashx" />
+    <Content Include="EUPortalMasterPage.master" />
+    <Content Include="EUPortalMasterPageGeneric.Master" />
+    <None Include="Reports\dsSales.xsc">
+      <DependentUpon>dsSales.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\dsSales.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsSales.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\dsSales.xss">
+      <DependentUpon>dsSales.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\dsStockIssue.xsc">
+      <DependentUpon>dsStockIssue.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\dsStockIssue.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsStockIssue.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\dsStockIssue.xss">
+      <DependentUpon>dsStockIssue.xsd</DependentUpon>
+    </None>
+    <None Include="Script\Menu\CardProMIS.pgt" />
+    <None Include="Script\Menu\CardProMIS2.pgt" />
+    <None Include="Script\Menu\TestMenu.pgt" />
+    <None Include="Script\Menu\Thumbs.db" />
+    <Content Include="Images\eu-logo.jpg" />
+    <Content Include="Images\euTopBanner.swf" />
+    <Content Include="Images\eu_spotlight.gif" />
+    <Content Include="Images\eventsevents_at_eu.gif" />
+    <Content Include="Images\images\icon\affiliate.png" />
+    <Content Include="Images\images\icon\blog.png" />
+    <Content Include="Images\images\icon\forum.png" />
+    <Content Include="Images\images\icon\fvec_win_32.png" />
+    <Content Include="Images\images\icon\help.png" />
+    <Content Include="Images\images\icon\rss.png" />
+    <Content Include="Images\images\icon\sothink-decompiler.png" />
+    <Content Include="Images\images\icon\sothink-logo-maker-32.png" />
+    <Content Include="Images\images\icon\sothink-Quicker-32.png" />
+    <Content Include="Images\images\icon\sothink-SWF-to-Video-Conver-32.png" />
+    <Content Include="Images\images\icon\support.png" />
+    <Content Include="Images\images\product\flashdecompiler\award\award-flashdecompiler.gif" />
+    <Content Include="Images\images\product\swfcatcher\2.gif" />
+    <Content Include="Images\images\product\swfcatcher\3.gif" />
+    <Content Include="Images\images\product\swfcatcher\4.gif" />
+    <Content Include="Images\images\product\swfcatcher\catcher-for-firefox-ad1.png" />
+    <Content Include="Images\images\product\swfcatcher\catcher-for-firefox-ad2.png" />
+    <Content Include="Images\images\product\swfcatcher\download-review.jpg" />
+    <Content Include="Images\images\product\swfcatcher\firefox-fileopen.gif" />
+    <Content Include="Images\images\product\swfcatcher\install.gif" />
+    <Content Include="Images\images\product\swfcatcher\wvd.gif" />
+    <Content Include="Images\sothink-logo-bottom.png" />
+    <Content Include="Images\welcomeText.gif" />
+    <Content Include="Pages\DetailMessage.aspx" />
+    <Content Include="Pages\MessageSetup.aspx" />
+    <Content Include="Pages\NewsAndEventsArchieve.aspx" />
+    <Content Include="Pages\NewsAndEventsDetail.aspx" />
+    <Content Include="Pages\NoticeBoardArchieve.aspx" />
+    <Content Include="Pages\NoticeBoardDetail.aspx" />
+    <Content Include="Pages\WelcomeMessageSetup.aspx" />
+    <Content Include="Pages\Logout.aspx" />
+    <Content Include="Pages\Unauthorised.aspx" />
+    <Content Include="style\main.css" />
+    <Content Include="style\style_blue\css\base.css" />
+    <Content Include="style\style_blue\css\style.css" />
+    <Content Include="style\style_blue\images\bg-bottom-line.png" />
+    <Content Include="style\style_blue\images\bg-bottom.jpg" />
+    <Content Include="style\style_blue\images\bg-content-style1.gif" />
+    <Content Include="style\style_blue\images\bg-content.gif" />
+    <Content Include="style\style_blue\images\bg-leftproduct-title.gif" />
+    <Content Include="style\style_blue\images\bg-menu-hover.gif" />
+    <Content Include="style\style_blue\images\bg-product-more.gif" />
+    <Content Include="style\style_blue\images\bg-recommend.gif" />
+    <Content Include="style\style_blue\images\bg-right-box.gif" />
+    <Content Include="style\style_blue\images\bg-search.gif" />
+    <Content Include="style\style_blue\images\bg-site2.gif" />
+    <Content Include="style\style_blue\images\bg-submenu-hover.png" />
+    <Content Include="style\style_blue\images\bg-submenu-title-bottom.png" />
+    <Content Include="style\style_blue\images\bg-submenu-title.png" />
+    <Content Include="style\style_blue\images\bg-submenu.png" />
+    <Content Include="style\style_blue\images\bg-top.jpg" />
+    <Content Include="style\style_blue\images\bg-topss.jpg" />
+    <Content Include="style\style_blue\images\bg-two.gif" />
+    <Content Include="style\style_blue\images\btn-download.gif" />
+    <Content Include="style\style_blue\images\btn-title-more.gif" />
+    <Content Include="style\style_blue\images\Copy of bg-top.jpg" />
+    <Content Include="style\style_blue\images\dot-tran.gif" />
+    <Content Include="style\style_blue\images\download.png" />
+    <Content Include="style\style_blue\images\euTopBanner.swf" />
+    <Content Include="style\style_blue\images\icon_new.gif" />
+    <Content Include="style\style_blue\images\menu-sign.gif" />
+    <Content Include="style\style_blue\images\rightmenu-title.gif" />
+    <Content Include="style\style_blue\images\sign-list.gif" />
+    <Content Include="style\style_blue\images\sothink-logo-bottoms.png" />
+    <Content Include="style\style_blue\images\sothink-logssso-bottom.png" />
+    <Content Include="style\style_blue\images\sothink-lossgo-bottom.png" />
+    <Content Include="style\style_blue\images\top_order.gif" />
+    <Content Include="style\style_blue\js\bottom-link.js" />
+    <Content Include="style\style_blue\js\newsletter.js" />
+    <Content Include="style\style_blue\js\top-area1.js" />
+    <Content Include="style\style_blue\js\top-area2.js" />
+    <Content Include="style\style_blue\js\top-area3.js" />
+    <Content Include="UserControl\FooterTitle.ascx" />
+    <Content Include="UserControl\HeaderTitle.ascx" />
+    <Content Include="index.aspx" />
+    <Content Include="WebForm2.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Pages\ImageLoad\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2127</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
