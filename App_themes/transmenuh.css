@@ -1,0 +1,74 @@
+
+/*	EASTERN UNIVERSITY WEBPORTAL MENU CSS developped by
+	Md. Anowar Hossain
+	Email:ww_anowar@yahoo.com
+	Phone#01716556029
+*/
+
+.transMenu {
+	LEFT: -1000px; OVERFLOW: hidden; POSITION: absolute; TOP: -1000px
+}
+.transMenu .content {
+	POSITION: absolute
+}
+.transMenu .items {
+	Z-INDEX: 2; LEFT: 0px; TEXT-INDENT: 8px; POSITION: relative; TOP: 0px
+}
+.top .items {
+	BORDER-TOP: medium none
+}
+.transMenu .background {
+	Z-INDEX: 1; FILTER: alpha(opacity=80); LEFT: 0px; POSITION: absolute; TOP: 0px; moz-opacity: .9
+}
+.transMenu .shadowRight {
+	Z-INDEX: 3; FILTER: alpha(opacity=60); WIDTH: 2px; POSITION: absolute; TOP: 3px; moz-opacity: .4
+}
+.transMenu .shadowBottom {
+	Z-INDEX: 1; FILTER: alpha(opacity=60); LEFT: 3px; POSITION: absolute; HEIGHT: 2px; moz-opacity: .4
+}
+.transMenu .item {
+	BORDER-RIGHT: medium none; PADDING-RIGHT: 0px; BORDER-TOP: medium none; DISPLAY: block; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FONT-SIZE: 11px; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-LEFT: medium none; CURSOR: hand; PADDING-TOP: 0px; BORDER-BOTTOM: #ffffff 1px solid; TEXT-DECORATION: none
+}
+.transMenu .hover {
+	BACKGROUND: #0066cc
+}
+.transMenu .item IMG {
+	MARGIN-LEFT: 10px
+}
+.transMenu .item#active {
+	FILTER: alpha(opacity=40); COLOR: #0066cc
+}
+.transMenu .hover#active {
+	BACKGROUND: #0066cc
+}
+.transMenu .item TD {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; PADDING-BOTTOM: 0px; COLOR: #0066cc; LINE-HEIGHT: 15px; PADDING-TOP: 0px
+}
+.transMenu .hover TD {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; COLOR: #ffffff; PADDING-TOP: 0px
+}
+#wrap {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+#menu {
+	
+}
+A.mainlevel-trans:link {
+	BORDER-RIGHT: #fff 1px solid; PADDING-RIGHT: 11px; DISPLAY: block; PADDING-LEFT: 5px; FONT-WEIGHT: bold; FONT-SIZE: 11px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: auto; COLOR: #000; LINE-HEIGHT: 16px; PADDING-TOP: 2px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; WHITE-SPACE: nowrap; HEIGHT: 18px; TEXT-DECORATION: none
+}
+A.mainlevel-trans:visited {
+	BORDER-RIGHT: #fff 1px solid; PADDING-RIGHT: 11px; DISPLAY: block; PADDING-LEFT:5px; FONT-WEIGHT: bold; FONT-SIZE: 11px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: auto; COLOR: #000; LINE-HEIGHT: 16px; PADDING-TOP: 2px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; WHITE-SPACE: nowrap; HEIGHT: 18px; TEXT-DECORATION: none
+}
+A.mainlevel-trans:hover {
+	COLOR: #ffffff
+	/*COLOR: #0066cc*/
+}
+A.mainlevel_active-trans {
+	BORDER-RIGHT: #fff 1px solid; PADDING-RIGHT: 15px; DISPLAY: block; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FONT-SIZE: 11px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: auto; COLOR: #fff; LINE-HEIGHT: 16px; PADDING-TOP: 2px; BORDER-BOTTOM: #a3b8e9 4px solid; FONT-FAMILY: Verdana; WHITE-SPACE: nowrap; HEIGHT: 18px; TEXT-DECORATION: none
+}
+A.mainlevel_active-trans:visited {
+	BORDER-RIGHT: #fff 1px solid; PADDING-RIGHT: 15px; DISPLAY: block; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FONT-SIZE: 11px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: auto; COLOR: #fff; LINE-HEIGHT: 16px; PADDING-TOP: 2px; BORDER-BOTTOM: #a3b8e9 4px solid; FONT-FAMILY: Verdana; WHITE-SPACE: nowrap; HEIGHT: 18px; TEXT-DECORATION: none
+}
+A.mainlevel_active-trans:hover {
+	COLOR: #0066cc
+}

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsAcademicTranscript" targetNamespace="http://tempuri.org/dsAcademicTranscript.xsd" xmlns:mstns="http://tempuri.org/dsAcademicTranscript.xsd" xmlns="http://tempuri.org/dsAcademicTranscript.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsAcademicTranscript" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Student">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Id" type="xs:string" minOccurs="0" />
+              <xs:element name="SemesterAdmission" type="xs:string" minOccurs="0" />
+              <xs:element name="SemesterGraduation" type="xs:string" minOccurs="0" />
+              <xs:element name="MonthGraduation" type="xs:string" minOccurs="0" />
+              <xs:element name="DegreeEarned" type="xs:string" minOccurs="0" />
+              <xs:element name="RequiredCreditHours" type="xs:string" minOccurs="0" />
+              <xs:element name="AreaOfConcentration" type="xs:string" minOccurs="0" />
+              <xs:element name="Cgpa" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Waiver">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PUNINAME" type="xs:string" minOccurs="0" />
+              <xs:element name="EUCCODE" type="xs:string" minOccurs="0" />
+              <xs:element name="CNAME" type="xs:string" minOccurs="0" />
+              <xs:element name="CREDIT" type="xs:string" minOccurs="0" />
+              <xs:element name="PUNICCODE" type="xs:string" minOccurs="0" />
+              <xs:element name="PUNICNAME" type="xs:string" minOccurs="0" />
+              <xs:element name="PUNICREDIT" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Transfer">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PUNINAME" type="xs:string" minOccurs="0" />
+              <xs:element name="EUCCODE" type="xs:string" minOccurs="0" />
+              <xs:element name="CNAME" type="xs:string" minOccurs="0" />
+              <xs:element name="CREDIT" type="xs:string" minOccurs="0" />
+              <xs:element name="CCODEPREUNI" msdata:Caption="PUNICCODE" type="xs:string" minOccurs="0" />
+              <xs:element name="CNAMEPREUNI" msdata:Caption="PUNICNAME" type="xs:string" minOccurs="0" />
+              <xs:element name="PUNICREDIT" type="xs:string" minOccurs="0" />
+              <xs:element name="GRADE" type="xs:string" minOccurs="0" />
+              <xs:element name="GP" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CompletedCourse">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="COURSECODE" msdata:Caption="PUNINAME" type="xs:string" minOccurs="0" />
+              <xs:element name="CNAME" msdata:Caption="EUCCODE" type="xs:string" minOccurs="0" />
+              <xs:element name="CHOURS" msdata:Caption="CNAME" type="xs:string" minOccurs="0" />
+              <xs:element name="GGRADE" msdata:Caption="CREDIT" type="xs:string" minOccurs="0" />
+              <xs:element name="GRADEPOINT" msdata:Caption="PUNICCODE" type="xs:string" minOccurs="0" />
+              <xs:element name="FLAG" msdata:Caption="PUNICNAME" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

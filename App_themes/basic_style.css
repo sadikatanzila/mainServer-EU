@@ -1,0 +1,160 @@
+/* CSS Document for Eastern University */
+
+body 
+{
+	/*font-family:"Microsoft Sans Serif";
+	font-size:12px; 
+	text-align:center; 
+	margin-top:0px; 
+	border-bottom-width:thick;
+	background-color:#b0c4de;*/
+	
+	FONT-SIZE: 10px;
+	background: #ffffff url("images/background_line.gif");
+	background-repeat: repeat-x;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	width:750px;	 
+	text-align:left;
+	
+}
+
+H2 {
+	FONT-SIZE: 1.1em; MARGIN: 40px 0px 0px 10px; COLOR: #005d93; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+
+.clearfix:unknown 
+{
+	CLEAR: both; DISPLAY: block; VISIBILITY: hidden; HEIGHT: 0px; content: "."
+}
+.clearfix 
+{	
+}
+
+HTML .clearfix 
+{
+	HEIGHT: 1%
+}
+.clearfix 
+{
+	DISPLAY: block
+}
+#sidebar {
+	DISPLAY: inline; FONT-SIZE: 8pt; FLOAT: left; MARGIN: 0px 0px 0px 10px; WIDTH: 225px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; POSITION: relative; TEXT-ALIGN: left
+}
+#sidebar UL {
+	POSITION: relative
+}
+#sidebar UL LI {
+	LIST-STYLE-IMAGE: none; LIST-STYLE-TYPE: none
+}
+#sidebar UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+
+/*BODY
+{
+    FONT-SIZE: 10px;
+	background: #ffffff url("images/background_line.gif");
+	background-repeat: repeat-x;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}*/
+
+.table_main { text-align:left; background-color:White; }
+.table_nav {width:100%; text-align:left; background-color:White;}
+.nav_menu{padding: 5px 10px 5px 10px; text-align:right; }
+.nav_menu a {padding: 5px 10px 5px 10px; text-align:right; text-decoration:underline; }
+
+.body_left{	font-family:"MS Sans Serif"; text-align:left; width:19%; vertical-align:top;}
+.body_right{padding:[5px][15px][5px][5px];  font-family:"MS Sans Serif"; text-align:justify;width:75%; border: #e1ede9 1px solid ;}
+
+.footer_table{ color:Black; width:100%; text-align:right; vertical-align:top;border-top-style:dotted;}
+.footertext {color:#4F4F4F; font-size:11px; text-align:left; padding-left:10px; vertical-align:top;}
+.content_td_tracker {text-align:left; padding-bottom:10px; font-size:12px; color:#0066CC; font-weight:bold; height:20px; border: #e1ede9 1px dotted ;}
+.td_top_menu  {text-align:right; padding:0px 10px 2px 5px; font-size:12px; color:#000000; font-weight:bold; }
+.td_top_menu a {text-align:center; padding:2px 5px 2px 5px; color:#000000; font-weight:bold;background-color:#fffccc; border: #e1ede9 2px solid ;}
+
+/*.td_top_menu  {text-align:center; padding:0px 10px 0px 2px; font-size:12px; color:#0066CC; font-weight:bold; border: #e1ede9 1px dotted ;}*/
+
+
+
+.td_topnav_logo {width:220px; text-align:left; vertical-align:top;}
+.td_topnav_right {width:530px; vertical-align:bottom;}
+.td_topnav_right_top {vertical-align:top; font-size:14px; text-align:right;}
+.td_topnav_right_top a {color:#CC0000; text-decoration:none; padding-right:10px; padding-left:5px; padding-top:10px; font-weight:bold;}
+.td_topnav_right_top a:hover {color:#FFFFFF; background-color:#CC0000; text-decoration:none;}
+
+
+.topnav {font-size:12px; vertical-align:bottom; text-align:right;height:25px;}
+.topnav a {color:#FFFFFF; text-decoration:none; padding:5px 10px 5px 5px; font-weight:bold;}
+.topnav a:hover {color:#CC0000; background-color:#FFFFFF; text-decoration:none;} /*text-decoration:underline;}*/
+
+
+
+.contentheader {color:#FFFFFF; font-size:15px}
+
+.indeximg1container {width:208px; vertical-align:top;}
+.indeximg1 {padding:10px 6px 10px 6px; text-align:left;}
+.indeximg1content {color:#FFFFFF; width:142px; vertical-align:top; font-size:12px; padding:3px;text-align:left;}
+.indeximg1content a {color:#CCFF00; text-decoration:underline; font-size:12px; padding:3px;text-align:left;}
+
+.indeximg2container {vertical-align:top;}
+.indeximg2 {margin:10px 4px 10px 10px; text-align:left; width:100px;}
+.indeximg2text {width: 200px; color:#FFFFFF; font-size:11px; vertical-align:top; text-align:left; padding:10px 4px 0px 5px;}
+.indeximg2text a {color:#3B3B3B; text-decoration:underline; font-size:12px;text-align:left;}
+
+
+
+
+/* content pages */  
+.content_td_right_panel {width:200px; vertical-align:top; text-align:left; margin-right:6px;}
+.content_td_right_panel_header {padding:5px; font-size:12px; font-weight:bold; background-color:#CCCCCC; color:#CC0000;}
+.content_td_right_panel_links {padding:5px; font-size:12px; background-color:#F9F9F9; color:#CC0000; font-weight:bold;}
+.content_td_right_panel_links a {font-size:12px; background-color:#F9F9F9; color:#333333; text-decoration:underline; font-weight:normal;}
+
+.content_td_center_panel {width:230px; vertical-align:top;}
+.content_td_center_panel_picture_box {border:1px solid #CCCCCC; padding:5px 2px 5px 2px; vertical-align:top; text-align:center;}
+.content_td_center_panel_picture {width:190px; }
+
+.content_td_left_panel {width:320px; vertical-align:top;}
+.content_td_left_panel_full {width:550px; vertical-align:top;}
+.content_td_left_panel_text {font-size:12px; text-align:left;}
+.content_td_left_panel_text a {color:#0033FF; text-decoration:underline;}
+.content_td_left_panel_text_header {font-size:13px; text-align:left; font-weight:bold;}
+
+
+/* Collections */
+
+.td_collection_container {width:750px; vertical-align:top;}
+.td_collection_segment_header {padding:5px; font-size:13px; font-weight:bold; background-color:#CCCCCC; color:#CC0000;}
+.td_collection_segment_header_link {padding-right:5px; background-color:#CCCCCC; text-align:right; vertical-align:middle;}
+.td_collection_segment_header_link a {font-size:12px; font-weight:bold; color:#FFFFFF; text-decoration:underline;}
+.td_collection_picture_box { border:1px solid #CCCCCC; padding:5px; vertical-align:top; text-align:center;}
+.td_collection_picture {width:230px; cursor:pointer; }
+.td_collection_picture_full {text-align:left; width:auto;}
+.td_collection_blank10 {width:10px;}
+.td_collection_blankh {height:8px;}
+.td_collection_page_number {font-size:12px; color:#333333; text-align:left;}
+.td_collection_page_number a {color:#0033FF; padding-left:5px; padding-right:5px; text-decoration:underline;}
+.td_collection_show_tracker { color:#0066CC; font-size:12px; font-weight:bold; }
+
+/* Machines pop-up */
+
+.td_row_left { text-align:left; font-size:11px; background-color:#E5E5E5; }
+.td_row_right { text-align:right; font-size:11px; background-color:#E5E5E5; }
+.td_row_center { text-align:center; font-size:11px; background-color:#E5E5E5; }
+.td_header_left { text-align:left; font-size:11px; font-weight:bold; background-color:#666666; color:#FFFFFF; }
+.td_header_center { text-align:center; font-size:11px; font-weight:bold; background-color:#666666; color:#FFFFFF; }
+.td_header_right { text-align:right; font-size:11px; font-weight:bold; background-color:#666666; color:#FFFFFF; }
+.td_header_top1 { text-align:center; font-size:17px; font-weight:bold; }
+.td_header_top2 { text-align:center; font-size:16px; }
+
+/* Admin Panel */
+.td_login_msg { text-align:left; font-size:10px; color:Red; }
+.td_login_login { text-align:left; font-size:12px; font-weight:bold; background-color:#CC0000; color:White; }
+.td_admin_left { text-align:left; font-size:12px; width:100px; }
+.btn_admin { background-color:#CC0000; color:White; font-size:11px; }
+.td_page_link { background-color:#CC0000; color:White; font-size:12px; }
+.td_admin_tracker { color:#0066CC; font-size:12px; font-weight:bold; background-color:Silver }
+
+
+

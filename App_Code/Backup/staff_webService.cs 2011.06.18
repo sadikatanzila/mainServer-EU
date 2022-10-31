@@ -1,0 +1,669 @@
+using System;
+using System.Web;
+using System.Collections;
+using System.Web.Services;
+using System.Web.Services.Protocols;
+using System.Data;
+ 
+ 
+public class staff_webService : System.Web.Services.WebService
+{
+    Dts obj_db;
+
+    public staff_webService()
+    {
+        obj_db = new Dts();
+    }
+
+    public DataTable get_allCourses_ofA_semester(string semester, string year)
+    {
+        string sql = "Select distinct * from WEB_VIEW_COURSE_TEACHER  ";
+        sql += " where COURSE_KEY like '" + semester + year + "%' and TEACHER_ID='" + Session["user"].ToString() + "' order by CNAME asc";
+        return obj_db.get_viewData(sql, "coursList");
+    }
+    
+
+
+    public DataTable get_allStudent_ofA_CoursesTeacher(string course_teacher_id)
+    {
+        string sql = "Select * from  WEB_COURSE_STUDENT  ";
+        sql += " where COURSE_TEACHER_ID= '" + course_teacher_id + "' order by SID asc";
+        return obj_db.get_viewData(sql, "studentList");
+    }
+
+
+    public string set_active_staff(string staff_id)
+    {
+        string sql = " update WEB_TEACHER_STAFF set STAFF_CTRL=1 where STAFF_ID='" + staff_id + "' "; 
+        return obj_db.execute_query(sql);
+    }
+
+    public string set_inactive_staff(string staff_id)
+    {
+        string sql = " update WEB_TEACHER_STAFF set STAFF_CTRL=0 where STAFF_ID='" + staff_id + "' ";
+        return obj_db.execute_query(sql);
+    }
+
+    public DataTable get_attendance_ofA_Courses(string course_teacher_id, DateTime dt)
+    {
+        
+        string sql = "Select * from WEB_ATTENDANCE  ";
+        sql += " where COURSE_TEACHER_ID= '" + course_teacher_id + "' and CLASS_DATE='" + new cls_tools().get_database_formateDate(dt) + "' order by SID asc";
+        return obj_db.get_viewData(sql, "studentList");
+    }
+
+
+    public string save_assignment_teacher(DataSet ds, ref string ids)
+    { 
+        string sql = "";
+        foreach (DataRow dr in ds.Tables["assignment"].Rows)
+        {
+            String code = obj_db.get_pk_no("course_mat");
+            ids = "Ass" + code;
+
+            sql = @" insert into WEB_COURSE_MATERIALS_TEACHER (COURSE_MATERIALS_ID, COURSE_TEACHER_ID, TITLE, FILE_NAME, TYPE,UPLOAD_DATE, DUE_DATE, DESCRIPTION, CTRL)";
+            sql += " values ('" + ids + "', '" + dr["COURSE_TEACHER_ID"] + "', '" + dr["TITLE"] + "', '" + dr["FILE_NAME"] + "', '" + dr["TYPE"] + "', "; // '" + dr["FILE_DATA"] + "',
+            sql += " '" + dr["UPLOAD_DATE"] + "', '" + dr["DUE_DATE"] + "', '" + dr["DESCRIPTION"] + "', '" + dr["CTRL"] + "' ) ";
+            new admin_webService().update_code("course_mat", code);
+            break;
+        } 
+        return obj_db.execute_query(sql);    
+    }
+
+    public string save_lectures(DataSet ds, ref string ids)
+    {  
+        string sql = "";
+        foreach (DataRow dr in ds.Tables["assignment"].Rows)
+        {
+            string code = obj_db.get_pk_no("course_mat");
+            ids = "Lec" + code;
+            sql = @" insert into WEB_COURSE_MATERIALS_TEACHER (COURSE_MATERIALS_ID, COURSE_TEACHER_ID, TITLE, FILE_NAME, TYPE,UPLOAD_DATE, DESCRIPTION, CTRL)";
+            sql += " values ('" + ids + "', '" + dr["COURSE_TEACHER_ID"] + "', '" + dr["TITLE"] + "', '" + dr["FILE_NAME"] + "', '" + dr["TYPE"] + "', ";
+            sql += " '" + dr["UPLOAD_DATE"] + "','" + dr["DESCRIPTION"] + "', '" + dr["CTRL"] + "' ) ";
+            new admin_webService().update_code("course_mat", code);
+            break;
+        }
+        return obj_db.execute_query(sql);
+    }
+
+
+    public int insert_final_advising(DataSet ds, ref string status)
+    {
+        string sql = "";
+        int count=0;
+       
+        foreach (DataRow dr in ds.Tables["OFFERERINGANDGRADE"].Rows)
+        {
+            sql = @" insert into OFFERERINGANDGRADE (COURSEKEY, GGRADE, GTYPE, MARKS, REGKEY, GGROUP, CHOURS, GPOINT, GGRADE2)";
+            sql += " values ('" + dr["COURSEKEY"] + "', '" + dr["GGRADE"] + "', '" + dr["GTYPE"] + "', '" + dr["MARKS"] + "', '" + dr["REGKEY"] + "', ";
+            sql += " '" + dr["GGROUP"] + "','" + dr["CHOURS"] + "', '" + dr["GPOINT"] + "', '" + dr["GGRADE2"] + "'  ) ";
+
+            if (obj_db.execute_query(sql) == "1")
+            {
+                count++;
+                obj_db.execute_query("update WEB_COURSE_OFFERING_TEMP set CTRL='2' where COURSEKEY='" + dr["COURSEKEY"] + "' and REGKEY ='" + dr["REGKEY"] + "' " );
+            }
+            else
+                status += "" + dr["COURSEKEY"] + ", ";
+        }
+
+        return count;
+       
+    }
+
+
+    public int insert_teacher_grading(DataSet ds, Boolean isApprove)
+    {
+        string sql = "";
+        int count = 0;
+
+        foreach (DataRow dr in ds.Tables["OFFERERINGANDGRADE"].Rows)
+        {
+            sql = "";
+
+            if (isApprove)
+            {
+                sql = @" update OFFERERINGANDGRADE set GGRADE='" + dr["GGRADE"] + "', GGRADE2='" + dr["GGRADE2"] + "',  GPOINT='" + dr["GPOINT"] + "',  ";
+                sql += "  CREATED_BY='" + dr["CREATED_BY"] + "' , CREATED_DATE='" + dr["CREATED_DATE"] + "', APPROVE_CTRL=1  ";
+                sql += " where COURSEKEY='" + dr["COURSEKEY"] + "' and REGKEY='" + dr["REGKEY"] + "' ";
+                
+            }
+            else
+            {
+                sql = @" update OFFERERINGANDGRADE set GGRADE='" + dr["GGRADE"] + "', GGRADE2='" + dr["GGRADE2"] + "',  GPOINT='" + dr["GPOINT"] + "',  ";
+                sql += "  CREATED_BY='" + dr["CREATED_BY"] + "' , CREATED_DATE='" + dr["CREATED_DATE"] + "'  ";
+                sql += " where COURSEKEY='" + dr["COURSEKEY"] + "' and REGKEY='" + dr["REGKEY"] + "' ";
+               
+            }
+
+            if (obj_db.execute_query(sql) == "1")
+                count++;
+
+
+        }
+
+        return count;
+
+    }
+
+
+    
+    public string save_attendance(DataSet ds, string course_teacherId, DateTime date)
+    {
+        obj_db.execute_query(" Delete from WEB_STUDENT_ATTENDANCE where CLASS_DATE='" + new cls_tools().get_database_formateDate(date) + "' and  COURSE_TEACHER_ID='" + course_teacherId + "' ");
+        return obj_db.insert_general(ds, "WEB_STUDENT_ATTENDANCE");
+    }
+
+    public DataTable get_allStudent_ofA_advisor(string advisor, string batch)
+    {
+        string sql = "Select * from STUDENT where ADVISOR_ID='" + advisor + "' and SID like '" + batch + "%'  ";
+        return obj_db.get_viewData(sql, "studentList");
+    }
+    
+
+    public string save_outLine(DataSet ds, ref string ids)
+    {
+        string sql = "";
+        
+            foreach (DataRow dr in ds.Tables["assignment"].Rows)
+            {
+                string code = obj_db.get_pk_no("course_mat");
+                ids = "Out" + code; 
+                sql = @" insert into WEB_COURSE_MATERIALS_TEACHER (COURSE_MATERIALS_ID, COURSE_TEACHER_ID, TITLE, FILE_NAME, TYPE,UPLOAD_DATE, DESCRIPTION, CTRL)";
+                sql += " values ('" + ids + "', '" + dr["COURSE_TEACHER_ID"] + "', '" + dr["TITLE"] + "', '" + dr["FILE_NAME"] + "', '" + dr["TYPE"] + "', ";
+                sql += " '" + dr["UPLOAD_DATE"] + "','" + dr["DESCRIPTION"] + "', '" + dr["CTRL"] + "' ) ";
+
+                new admin_webService().update_code("course_mat", code);
+                break;
+            }
+        return obj_db.execute_query(sql);
+    }
+
+    public string delete_assignment_teacher(string ids)
+    {
+        return obj_db.execute_query(" Delete from WEB_COURSE_MATERIALS_TEACHER where COURSE_MATERIALS_ID='" + ids + "' ");
+    }
+
+    public string delete_preOffer_courses(string courseKey, String regKey)
+    {
+        return obj_db.execute_query(" Delete from WEB_COURSE_OFFERING_TEMP where COURSEKEY='" + courseKey + "' and REGKEY='" + regKey + "' ");
+    }
+
+
+    public string upload_teacher_picture(string picName)
+    {
+        string sql = @" update WEB_TEACHER_STAFF set STAFF_PICTURE='" + picName + "' where STAFF_ID='" + Session["user"].ToString() + "' ";
+        return obj_db.execute_query("" + sql);
+    }
+
+
+
+    public bool check_staff_login(string user_id, string user_pass)
+    {
+        DataSet ds = new DataSet();
+        bool status = false;
+
+        string sql = @"Select * from WEB_TEACHER_STAFF where STAFF_ID='" + user_id + "' and PASSWORD='" + user_pass + "' and  STAFF_CTRL=1  ";
+        ds.Merge(obj_db.get_viewData(sql, "WEB_TEACHER_STAFF"));
+
+        if (ds.Tables["WEB_TEACHER_STAFF"].Rows.Count > 0)
+        {
+            DataRow dr = ds.Tables["WEB_TEACHER_STAFF"].Rows[0];
+            if (dr["STAFF_ID"].ToString() != "" && dr["PASSWORD"].ToString() != "")
+            {
+                if (dr["STAFF_ID"].ToString() == user_id && dr["PASSWORD"].ToString() == user_pass)
+                {
+                    status = true;
+                }
+
+            }
+        }
+
+        return status;
+    }
+     
+
+    public DataTable get_all_assignment_ofA_course(string course_teacher_id)
+    {
+        string sql = " Select * from WEB_COURSE_MATERIALS_TEACHER where COURSE_TEACHER_ID='" + course_teacher_id + "' and TYPE=1 order by UPLOAD_DATE asc ";        
+        return obj_db.get_viewData(sql, "assignmentList");
+    }
+
+
+    public DataTable get_all_lectures_ofA_course(string course_teacher_id)
+    {
+        string sql = " Select * from WEB_COURSE_MATERIALS_TEACHER where COURSE_TEACHER_ID='" + course_teacher_id + "' and TYPE=2 order by UPLOAD_DATE asc ";
+        return obj_db.get_viewData(sql, "assignmentList");
+    }
+
+    public DataTable get_a_lecture_teacher(string lecture_id)
+    {
+        string sql = " Select * from WEB_COURSE_MATERIALS_TEACHER where COURSE_MATERIALS_ID='" + lecture_id + "' ";
+        return obj_db.get_viewData(sql, "assignment");
+    }
+
+    public DataTable get_gradingPolicy(string profile)
+    {
+        string sql = " SELECT * FROM GRADINGPOLICY WHERE PROFILES='"+profile+"' ";
+        return obj_db.get_viewData(sql, "GRADINGPOLICY"+profile);
+    }
+
+
+    public DataTable get_all_studentSubmitted_assignment(string ass_id)
+    {
+        string sql = @" Select * from WEB_COURSE_MATERIALS_STUDENT where COURSE_MAT_ID='" + ass_id + "'  ";
+        return obj_db.get_viewData(sql, "s_courseMaterial");
+    }
+
+    public string get_a_courseName_onKey(string course_key)
+    {
+        string cname = "";
+
+        DataSet ds = new DataSet();        
+        string sql = " SELECT * FROM OFFEREDCOURSE, CHANGEDCOURSENAME ";
+        sql += " WHERE COURSEKEY='" + course_key + "' AND OFFEREDCOURSE.COURSECODE=CHANGEDCOURSENAME.COURSECODE ";
+        
+        ds.Merge(obj_db.get_viewData(sql, "OFFEREDCOURSE"));
+        if (ds.Tables["OFFEREDCOURSE"].Rows.Count > 0)
+        {
+            cname = ds.Tables["OFFEREDCOURSE"].Rows[0]["CNAME"].ToString();
+        }
+        return cname;
+    }
+
+    public DataTable get_all_publisher()
+    {
+        string sql = " Select * from PUBLISHERS  ";
+        return obj_db.get_viewData(sql, "PUBLISHERS");
+    }
+
+    public DataTable get_a_bookDetails_Info(string bookId)
+    {    
+        string sql = " SELECT BOOK_MASTER.*, BOOK_SECONDARY.*, PUBLISHERS.*  ";
+               sql += " FROM BOOK_MASTER,BOOK_SECONDARY,PUBLISHERS ";
+               sql += " WHERE BOOK_MASTER.BOOK_ID=BOOK_SECONDARY.BOOK_ID ";
+               sql += " AND BOOK_MASTER.PUB_CODE=PUBLISHERS.PUB_CODE ";
+               sql += " AND BOOK_MASTER.BOOK_ID='" + bookId + "' ";
+               sql += " AND BOOK_SECONDARY.STATUS='1' ";
+               return obj_db.get_viewData(sql, "BOOK_MASTER");
+    }
+
+    public DataTable get_find_Teacher(string department, string name_id)
+    {
+        int flag = 0;
+        string sql = @" SELECT ws.*, c.COLLEGENAME FROM WEB_TEACHER_STAFF ws, COLLEGE c WHERE ws.DEPARTMENT=c.COLLEGECODE  and JOB_CATEGORY='Teacher' ";
+
+        if (department != "Select")
+        {
+            sql += " and ws.DEPARTMENT='" + department + "'";
+            flag++;
+        }
+
+        if (!string.IsNullOrEmpty(name_id.Trim()))
+        {
+
+            sql += " and STAFF_NAME like '%" + name_id + "%' ";
+            
+        }
+
+        return obj_db.get_viewData(sql, "staff");
+    }
+
+    public DataTable get_all_active_argument()
+    {
+        string sql = " Select * from WEB_TEACHER_EVAL_ARGUMENT ";
+        return obj_db.get_viewData(sql, "argument");
+    }
+
+    public DataTable return_table(string sql, string tableName)
+    {
+        return obj_db.get_viewData(sql, tableName);
+    }
+
+
+    public DataTable get_course_teacher_Info(string courseTeacherID)
+    {
+        string sql = @" SELECT ct.* ,s.STAFF_NAME,s.DEPARTMENT, o.COURSECODE,cn.CNAME ";
+        sql += " FROM WEB_COURSE_TEACHER ct, WEB_TEACHER_STAFF s, OFFEREDCOURSE o,CHANGEDCOURSENAME cn ";
+        sql += " WHERE COURSE_TEACHER_ID ='" + courseTeacherID + "' ";
+        sql += " AND ct.TEACHER_ID=s.STAFF_ID ";
+        sql += " AND (ct.COURSE_KEY=o.COURSEKEY AND o.COURSECODE=cn.COURSECODE)  ";
+
+        return obj_db.get_viewData(sql, "course_teacher_Info");
+
+    }
+
+
+
+    public DataTable get_searched_books(string publisher, string author, string dep, string title)
+    {
+        int flag = 0;
+        string sql = " Select BOOK_MASTER.*,PUBLISHERS.*, ";
+        sql += " (  SELECT COUNT(BOOK_ID) FROM BOOK_SECONDARY WHERE BOOK_SECONDARY.BOOK_ID=BOOK_MASTER.BOOK_ID ";
+        sql += " AND STATUS='1' ) AS available ";
+        sql += "  from BOOK_MASTER, PUBLISHERS ";
+
+        if (!String.IsNullOrEmpty(author))
+        {
+            sql += "  where  AUTHORS like '%" + author.Trim() + "%' ";
+            flag++;
+        }
+
+        if (publisher!="0")
+        {
+            if (flag==0)
+                sql += "  WHERE  BOOK_MASTER.PUB_CODE ='" + publisher + "' ";
+            else
+                sql += "  and  BOOK_MASTER.PUB_CODE ='" + publisher + "' ";
+            flag++;
+        }
+
+        if (dep != "Select")
+        {
+            if (flag == 0)
+                sql += "  WHERE  DEP_NAME='" + dep+ "' ";
+            else
+                sql += "  and  DEP_NAME='" + dep+ "' ";
+            flag++;
+        }
+
+        if (!String.IsNullOrEmpty(title))
+        {
+            if (flag == 0)
+                sql += "  WHERE  TITLE like '%" + title.Trim()+ "%' ";
+            else
+                sql += "  AND TITLE like '%" + title.Trim() + "%'";
+            flag++;
+        }
+
+        if (flag == 0)
+        {
+            sql += " where PUBLISHERS.PUB_CODE= BOOK_MASTER.PUB_CODE ";        
+        }
+        else
+            sql += " and PUBLISHERS.PUB_CODE= BOOK_MASTER.PUB_CODE ";        
+
+
+
+        return obj_db.get_viewData(sql, "BOOK_MASTER");
+    }
+
+    public string get_teacher_picture()
+    {
+        string picName = "";
+        DataSet ds = new DataSet();
+        string sql = @" select * from  WEB_TEACHER_STAFF where STAFF_ID='" + Session["user"].ToString() + "' ";
+        ds.Merge(obj_db.get_viewData(sql, "WEB_TEACHER_STAFF"));
+
+        if (ds.Tables["WEB_TEACHER_STAFF"].Rows.Count > 0)
+        {
+            if (!String.IsNullOrEmpty(ds.Tables["WEB_TEACHER_STAFF"].Rows[0]["STAFF_PICTURE"].ToString()))
+                picName = ds.Tables["WEB_TEACHER_STAFF"].Rows[0]["STAFF_PICTURE"].ToString();
+        }
+        return picName;
+    }
+
+    public string change_teacher_password(string previous_pass, string new_pass)
+    {
+        string sql = @" update WEB_TEACHER_STAFF set PASSWORD='" + new_pass + "' where STAFF_ID='" + Session["user"].ToString() + "' and PASSWORD= '" + previous_pass + "'  ";
+        return obj_db.execute_query("" + sql);
+    }
+
+    public string change_teacher_password_from_admin(string teacher_id, string new_pass)
+    {
+        string sql = @" update WEB_TEACHER_STAFF set PASSWORD='" + new_pass + "' where STAFF_ID='" + teacher_id.Trim() + "' ";
+        return obj_db.execute_query("" + sql);
+    }
+
+    public string change_teacher_password(string pre_pass,string userId, string new_pass)
+    {
+        string sql = @" update WEB_TEACHER_STAFF set PASSWORD='" + new_pass + "' where STAFF_ID='" + userId + "' and  PASSWORD='" + pre_pass + "'  ";
+        return obj_db.execute_query("" + sql);
+    }
+
+    public string get_a_teacher_ofA_course(string courseKey, string section)
+    {
+        String staff_name = "";
+
+        DataSet ds = new DataSet();
+        string sql = " SELECT  ct.*,tf.STAFF_NAME FROM WEB_COURSE_TEACHER ct, WEB_TEACHER_STAFF tf ";
+        sql += " WHERE ct.TEACHER_ID=tf.STAFF_ID AND ct.COURSE_KEY='" + courseKey + "' AND ct.SECTION='" + section + "' ";
+        ds.Merge( obj_db.get_viewData(sql, "teacher"));
+
+        if (ds.Tables["teacher"].Rows.Count > 0)
+        {
+            if (!string.IsNullOrEmpty(ds.Tables["teacher"].Rows[0]["STAFF_NAME"].ToString()))
+            {
+                staff_name = ds.Tables["teacher"].Rows[0]["STAFF_NAME"].ToString();
+                staff_name += ":" + ds.Tables["teacher"].Rows[0]["COURSE_TEACHER_ID"].ToString();
+            }        
+        }
+
+        return staff_name;
+    }
+
+    public DataTable get_teacher_notice()
+    {
+        string sql = @" Select * from WEB_NOTICE_BOARD where FOR_TEACHER=1 and CTRL=1 order by NOTICE_ID desc ";
+        return obj_db.get_viewData(sql, "WEB_NOTICE_BOARD");
+    }
+
+    public DataTable get_staff_info(string staffId)
+    {
+        string sql = @" Select * from WEB_TEACHER_STAFF where STAFF_ID='" + staffId + "'";
+        return obj_db.get_viewData(sql, "WEB_TEACHER_STAFF");
+    }
+
+    public DataTable get_advising_message(string staffId)
+    {
+        string sql = @" SELECT DISTINCT STUDENT.sid,sname,sprogram ,REGISTATUS.YEAR, REGISTATUS.SEMESTER ";
+        sql += " FROM STUDENT, REGISTATUS ,WEB_COURSE_OFFERING_TEMP  ";
+         sql += " WHERE  (REGISTATUS.SID=STUDENT.SID)AND ADVISOR_ID='" + staffId + "' ";
+         sql += " AND (WEB_COURSE_OFFERING_TEMP.REGKEY=REGISTATUS.REGKEY) AND CTRL=1 ";
+         sql += "  ORDER BY REGISTATUS.YEAR DESC,REGISTATUS.SEMESTER DESC, STUDENT.SID ASC ,SPROGRAM ASC ";
+       
+        return obj_db.get_viewData(sql, "advising_msg_list");
+    }
+
+
+    public DataTable get_a_student_information(string student_id)
+    {
+        string sql = " SELECT     a.*,d .STAFF_NAME FROM STUDENT a LEFT OUTER JOIN ";
+        sql += " WEB_TEACHER_STAFF d   ON a.ADVISOR_ID  = d.STAFF_ID WHERE sid='" + student_id + "' ";
+        return obj_db.get_viewData(sql, "student");
+    }
+    
+    public DataTable get_a_notice_details(string notice_id)
+    {
+        string sql = " SELECT  *from WEB_NOTICE_BOARD where NOTICE_ID='" + notice_id + "' and (FOR_TEACHER=1 or FOR_GENERAL=1 ) ";
+
+        return obj_db.get_viewData(sql, "WEB_NOTICE_BOARD");
+    }
+
+
+    public DataTable get_completed_course_information(string student_id)
+    {
+        string sql = " SELECT DISTINCT OFFEREDCOURSE.COURSECODE, a.* FROM OFFERERINGANDGRADE a,OFFEREDCOURSE ";
+        sql += " WHERE  REGKEY LIKE '" + student_id + "%' AND OFFEREDCOURSE.COURSEKEY=a.COURSEKEY AND GGRADE2<>'F' AND GGRADE2<>'W' ";       
+        return obj_db.get_viewData(sql, "courseList");
+    }
+
+    public DataTable get_tableData(string sql, string tableName)
+    {
+        return obj_db.get_viewData(sql, tableName);
+    }
+
+    public double get_total_completed_credit(string sid)
+    {
+        DataSet ds= new DataSet();
+        ds.Merge(get_completed_course_information(sid));
+
+        for(int i=0;i<ds.Tables["courseList"].Rows.Count;i++)
+        {
+            for (int j=i+1; j<ds.Tables["courseList"].Rows.Count;j++)
+            {
+                if (ds.Tables["courseList"].Rows[i]["COURSECODE"].ToString() == ds.Tables["courseList"].Rows[j]["COURSECODE"].ToString())
+                {
+                    if (Convert.ToDouble(ds.Tables["courseList"].Rows[j]["GPOINT"].ToString()) <= Convert.ToDouble(ds.Tables["courseList"].Rows[i]["GPOINT"].ToString()))
+                        ds.Tables["courseList"].Rows.RemoveAt(j--);                
+                }
+            }
+        }
+        
+        double total_credit = 0;
+        foreach (DataRow drt in ds.Tables["courseList"].Rows)
+        {
+            total_credit += Convert.ToDouble(drt["CHOURS"].ToString());
+        }
+
+        return total_credit;
+    }
+
+
+    public Double get_latest_cgpa(string sid)
+    {
+        string sem="", year=""; 
+        DataSet ds = new DataSet();
+        string sql = " SELECT * FROM REGISTATUS WHERE sid='" + sid + "' ORDER BY year DESC, SEMESTER DESC";        
+        ds.Merge(obj_db.get_viewData(sql,"registatus"));
+
+        if (ds.Tables["registatus"].Rows.Count > 0)
+        {
+            sem = ds.Tables["registatus"].Rows[0]["semester"].ToString(); 
+            year = ds.Tables["registatus"].Rows[0]["year"].ToString(); 
+            return get_CGPA_upto_semester(sid, year, sem);
+        }
+        else
+        {
+            return 0;
+        }
+
+
+    
+    }
+
+
+    public double get_CGPA_upto_semester(string sid, string year, string sem)
+    {
+        double cgpa = 0;
+
+       string sql=" SELECT g.coursekey, g.ggrade2, g.gtype, g.marks, g.regkey, g.ggroup, ";
+       sql+=" g.chours, g.gpoint, o.coursecode, r.sid, r.SEMESTER, r.YEAR ";
+       sql+=" FROM OFFERERINGANDGRADE g, OFFEREDCOURSE o, REGISTATUS r ";
+       sql += "  WHERE ((o.coursekey = g.coursekey) AND (r.regkey = g.regkey) ";//AND g.ggrade<>'F'
+       sql += " AND (r.YEAR<'" + year + "' OR( r.YEAR='" + year + "'AND r.SEMESTER<='" + sem + "')) AND sid='" + sid + "' ) ";
+
+       DataSet ds = new DataSet();
+       ds.Merge(obj_db.get_viewData(sql, "courseList"));
+
+       for (int i = 0; i < ds.Tables["courseList"].Rows.Count; i++)
+       {
+           for (int j = i + 1; j < ds.Tables["courseList"].Rows.Count; j++)
+           {
+               if (ds.Tables["courseList"].Rows[i]["COURSECODE"].ToString() == ds.Tables["courseList"].Rows[j]["COURSECODE"].ToString())
+               {
+                   if (Convert.ToDouble(ds.Tables["courseList"].Rows[j]["GPOINT"].ToString()) <= Convert.ToDouble(ds.Tables["courseList"].Rows[i]["GPOINT"].ToString()))
+                       ds.Tables["courseList"].Rows.RemoveAt(j--);
+                   else
+                   {
+                       ds.Tables["courseList"].Rows.RemoveAt(i);
+                       j--;
+                   }
+               }
+           }
+       }
+
+
+       double total_credit = 0;
+       double total_value = 0;
+
+       foreach (DataRow dr in ds.Tables["courseList"].Rows)
+       {
+           if (dr["GGRADE2"].ToString() != "I" && dr["GGRADE2"].ToString() != "W")
+           {
+               total_credit += Convert.ToDouble(dr["CHOURS"].ToString());
+               total_value +=  (Convert.ToDouble(dr["CHOURS"].ToString()) * Convert.ToDouble(dr["GPOINT"].ToString()));           
+           }
+       }
+
+       cgpa = total_value / total_credit;
+       return cgpa;
+    }
+
+
+
+    public DataTable get_SSC_information(string student_id)
+    {
+        string sql = " SELECT * FROM ACADEMICBACK_SSC where SID='" + student_id + "' ";
+        return obj_db.get_viewData(sql, "ACADEMICBACK_SSC");
+    }
+
+
+    public DataTable get_all_filterStaff(string status, string category, string department,string type)
+    {
+        string sql="";
+
+        if(type=="All")
+            sql = " SELECT * FROM WEB_TEACHER_STAFF,COLLEGE where (COLLEGECODE=DEPARTMENT) and   STAFF_CTRL='" + status + "' and JOB_CATEGORY='" + category + "' and DEPARTMENT='" + department + "' ";
+        else
+            sql = " SELECT * FROM WEB_TEACHER_STAFF,COLLEGE where (COLLEGECODE=DEPARTMENT) and JOB_TYPE='" + type + "'  and   STAFF_CTRL='" + status + "' and JOB_CATEGORY='" + category + "' and DEPARTMENT='" + department + "' ";
+
+        return obj_db.get_viewData(sql, "WEB_TEACHER_STAFFs");
+    }
+
+
+
+    public DataTable get_a_teacherInfo(string staffId)
+    {
+        string sql = " SELECT * FROM WEB_TEACHER_STAFF  where STAFF_ID='" + staffId + "'  ";
+        return obj_db.get_viewData(sql, "WEB_TEACHER_STAFFs");
+    }
+
+    public DataTable get_HSC_information(string student_id)
+    {
+        string sql = " SELECT * FROM ACADEMICBACK_HSC where SID='" + student_id + "' ";
+        return obj_db.get_viewData(sql, "ACADEMICBACK_HSC");
+    }
+
+    public DataTable get_oLevel_information(string student_id)
+    {
+        string sql = " SELECT * FROM ACADEMICBACK_OLEVEL where SID='" + student_id + "' ";
+        return obj_db.get_viewData(sql, "ACADEMICBACK_OLEVEL");
+    }
+
+    public DataTable get_ALevel_information(string student_id)
+    {
+        string sql = " SELECT * FROM ACADEMICBACK_ALEVEL where SID='" + student_id + "' ";
+        return obj_db.get_viewData(sql, "ACADEMICBACK_ALEVEL");
+    }
+
+    public DataTable get_otherLevel_information(string student_id)
+    {
+        string sql = " SELECT * FROM ACADEMICBACK_OTHERS where SID='" + student_id + "' ";
+        return obj_db.get_viewData(sql, "ACADEMICBACK_OTHERS");
+    }
+
+
+    public DataTable get_course_outline(string course_teacher_id)
+    {
+        string sql = " Select * from WEB_COURSE_MATERIALS_TEACHER where COURSE_TEACHER_ID='" + course_teacher_id + "' and TYPE=3 ";
+        return obj_db.get_viewData(sql, "outline");        
+    }
+
+    public string execute_query(string query)
+    {       
+        return obj_db.execute_query(query);
+    }
+
+
+    public DataTable get_all_course_ofa_Department(string depCode_id)
+    {
+        string sql = " Select * from WEB_DEPARTMENT_COURSES where DEPCODE='" +new cls_tools().get_department_code(depCode_id) + "' ";
+        return obj_db.get_viewData(sql, "WEB_DEPARTMENT_COURSES");
+    }
+
+
+
+    
+}
+
