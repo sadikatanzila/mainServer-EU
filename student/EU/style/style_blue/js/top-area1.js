@@ -1,0 +1,2 @@
+// JavaScript Document
+document.writeln("<img src=\"\/style\/style_blue\/images\/twitters.png\" alt=\"\" \/><a href=\"#" target=\"_blank\"> WEBMAIL<\/a><img src=\"\/style\/style_blue\/images\/mac-site.png\" alt=\"\" style=\"padding-left:5px\" \/><a href=\"#" target=\"_blank\"> LOGIN <\/a>")
