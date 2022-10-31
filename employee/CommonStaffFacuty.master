@@ -1,0 +1,115 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="CommonStaffFacuty.master.cs" Inherits="employee_CommonStaffFacuty" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+    <head id="Head1" runat="server">
+    <title>Eastern University</title>
+
+    <link href="../App_themes/jind.css" rel="stylesheet" type="text/css"/>
+    <link  href="../App_themes/transmenuh.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="../employee/CSS/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../employee/CSS/style_home.css" type="text/css" />
+        <link rel="stylesheet" href="../employee/CSS/ddsmoothmenu.css" type="text/css" />
+    
+    <script type="text/javascript" src="../employee/js/jquery.min.js"></script>    
+    <script type="text/javascript" src="../employee/js/ddsmoothmenu.js"></script>
+    <script type="text/javascript">
+        ddsmoothmenu.init({
+            mainmenuid: "smoothmenu",
+            orientation: 'h',
+            classname: 'ddsmoothmenu',
+            contentsource: "markup"
+        })
+	</script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        
+
+        <div class="wrapper" style="width:95%">
+
+             <div id="mastheadInner" style="width: 100%;  background-color: #FFFFFF;" align="center">
+            <table cellspacing="0" cellpadding="0" width="100%" align="right" border="0" runat="server">
+              
+                <tr> 
+                    <td valign="top" align="center" style="height: 12px; background-color:#1073CE">
+                        <img src="../images1/WebHeaderEU.png" width="100%" />
+                    </td>
+                </tr>
+                   <tr style="background-color:#ffffff;">
+                       <td>
+                           
+            <div id="smoothmenu" class="ddsmoothmenu" style="width: 100%; background-color:#0072BB; color: #FFFFFF; font-weight: bold;">
+		        <ul>
+                   
+			        <asp:Literal ID="tempHtmlTable" runat="server"> </asp:Literal>
+		        </ul>
+		        <div style="clear: both;"> </div>
+	        </div>
+            <div style="display:none;">
+                <asp:Label ID="lblUser" runat="server" Text="Admin" ForeColor="#F49521"></asp:Label>
+            </div>
+
+           
+
+             <div id="content_div" style="float:right; width:90%; height:100%;">
+                  <asp:ContentPlaceHolder ID="ContentPlaceHolder_tracker" runat="server">
+                  </asp:ContentPlaceHolder>
+                  
+                   <asp:ContentPlaceHolder ID="ContentPlaceHolder_definition" runat="server">
+                  </asp:ContentPlaceHolder>
+                            
+                  <asp:ContentPlaceHolder ID="ContentPlaceHolder_content" runat="server">
+                  </asp:ContentPlaceHolder>
+              </div>
+
+                       </td>
+
+                   </tr>
+
+                   <tr style="background-color:#747476;vertical-align:top; text-align: center;  font-weight: bold;">
+                       <td>
+                           <div style="height: 170px"">
+                               <br />
+                           <label style="color: #FFFFFF;"> Main Campus: House#26, Road 5, Dhanmondi, Dhaka, Bangladesh.Tel: +880.2.9676031-5
+                           <br />
+                            Fax: +88 02 9676031-5, +880.2.9676031-5. Email: info@eastern.uni.edu.bd</label>
+ <br /><br /><br /><br />
+                             <div style="position:relative;float:left;height:25px; width:99%; top: 5px; left: 10px;padding-top:5px;border-top:solid thin #0d1fde; ">
+
+                <table style="width:100%">
+                    <tr>
+                        <td style="text-align: left; padding-left: 30px;">
+                           <strong><span style="color:white;"> Copyright @Eastern University</span></strong>
+                        </td>
+                        <td style="text-align: right;padding-right:30px ">
+                         <strong><span style="color:white;">   Powered By EUIT</span></strong>
+                        </td>
+                    </tr>
+                </table>
+               
+            
+        </div>
+                               </div>
+                       </td>
+                   </tr>
+
+        
+             
+            </table>
+              
+        </div>
+ 
+           
+         
+	    </div>
+        
+    </form>
+</body>
+</html>

@@ -1,0 +1,233 @@
+
+body { margin: 0px; padding: 0px; background: #B3CBDD; min-height: 608px !important; }
+
+
+/* home or welcome page start */
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+}
+.home_page_left {
+	float: left;
+	width: 70%;
+	height: 639px;
+	background: url(../Images/choukash_gononet.png) bottom center no-repeat, url(../Images/business_image.png) top center no-repeat;
+}
+.home_page_right {
+	float: right;
+	background: url(../Images/back_main_right.jpg) no-repeat;
+	width: 30%;
+	height: 639px;
+}
+.quick_menu {
+	font-family: Verdana, Geneva, sans-serif;
+	padding: 0px 0px 0px 20px;
+}
+.quick_menu div {
+	color: #0066cc;
+	font-size: 14px;
+	font-weight: bold;
+	margin: 10px 0px 30px 0px;
+}
+.quick_menu ul {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+.quick_menu li {
+	padding: 10px 0px 18px 55px;
+	list-style-type: none;
+}
+.quick_menu a {
+	display: block;
+	padding: 0px;
+	color: #6f8eb4;
+	text-decoration: none;
+	font-size: 11px;
+	line-height: 15px;
+	font-style:italic;
+}
+.quick_menu a h4 {
+	color: #0066cc;
+	font-size: 15px;
+	margin: 0px;
+}
+.quick_menu a p 
+{
+    color: #808585;
+	font-size: 12px;
+	margin: 0px;
+	font-style:normal;
+	font-weight: bold;
+}
+.quick_menu div.company_name {
+	margin: 10px 10px 0px 0px;
+	padding: 0px;
+	font-size: 9px;
+	color: #4682c8;
+	text-align: right;
+	font-weight: normal;
+}
+
+
+.bil_entry_img { background: url(../Images/bil_entry_img.png) no-repeat; }
+.cutomer_due_img { background: url(../Images/cutomer_due_img.png) no-repeat; }
+.purchase_entry_img { background: url(../Images/purchase_entry_img.png) no-repeat; }
+.supplier_due_img { background: url(../Images/supplier_due_img.png) no-repeat; }
+.present_stock_img { background: url(../Images/present_stock_img.png) no-repeat; }
+.accounts_img { background: url(../Images/accounts_img.png) no-repeat; }
+.profit_loss_img { background: url(../Images/profit_loss_img.png) no-repeat; }
+.reorder_level_img { background: url(../Images/reorder_level_img.png) no-repeat; }
+.exits_img { background: url(../Images/exits_img.png) no-repeat; 
+
+
+/* home or welcome page end */
+
+
+/* button or anchor start */
+
+input[type='text'], input[type='password'] { padding: 2px 5px; border: 1px solid #ddd; color: #000; font-family: Tahoma, Geneva, sans-serif; font-size: 13px; margin-bottom: 3px; }
+
+textarea { width: 140px; height: 70px; padding: 2px 5px; border: 1px solid #ddd; color: #000; font-family: Tahoma, Geneva, sans-serif; font-size: 13px; resize:none; margin-bottom: 3px; 
+select { padding: 2px 5px; border: 1px solid #ddd; color: #000; font-family: Tahoma, Geneva, sans-serif; font-size: 13px; margin-bottom: 3px;  
+
+input[type="button"], input[type="submit"] {
+	background: #d0cfd0;
+   	background: #d0cfd0;
+	border: 1px solid #929294;
+	padding: 5px;
+	border-radius: 5px;
+	text-decoration: none;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	text-align: center;
+}
+
+input[type="button"].input_large, input[type="submit"].input_large {
+	padding: 20px 50px;
+}
+input[type="button"].input_extra_large, input[type="submit"].input_extra_large {
+	padding: 20px 100px;
+}
+.a {
+	display: block;
+	width: 100px;
+	text-align: center;
+	background: #d0cfd0;
+   	background: linear-gradient(#f2f2f2, #d0cfd0);
+	border: 1px solid #929294;
+	padding: 20px;
+	border-radius: 20px;
+	text-decoration: none;
+	color: #000;
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+/* bill entry start */
+
+.formtable_small 
+{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-family: Verdana;
+    font-size: 11px;
+}
+.formtable_center 
+{
+    margin: 0px auto;
+    padding: 10px;
+    border: 10px solid #B3CBDD;
+    background: #DBE8EF;
+}
+.formtable_center .formtable h2 
+{
+    margin: -10px -10px 10px -10px;
+    padding: 0px 0px 10px 25px;
+    font-size: 14PX;
+    background: url(../Images/choukash-bird.png) left 3px no-repeat #B3CBDD;
+}
+
+.formtable_center .formtable h2 a 
+{
+    background: url("../Images/cross.png") no-repeat scroll right 2px transparent;
+    float: right;
+    height: 50px;
+    margin-top: -13px;
+    text-decoration: none;
+    width: 50px;
+}
+
+.formtable_center .formtable .btn_btn 
+{
+    background: #d0cfd0;
+   	background: linear-gradient(#f2f2f2, #d0cfd0);
+	border: 1px solid #929294;
+	padding: 3px 10px;
+	width: 75px;
+	border-radius: 5px;
+	text-decoration: none;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 11px;
+}
+.formtable_center .formtable .btn_div
+{
+    margin: 5px 4px;
+    text-align: right;
+}
+.formtable_center .formtable .btn_btn_r 
+{
+    padding: 10px;
+}
+.formtable_center .formtable .form_div 
+{
+    background: #EDF1F4;
+    float: left;
+    margin-right: 7px;
+    padding: 6px;
+}
+.formtable_center .formtable .form_div span
+{
+    width: 200px;
+    display: inline-block;
+}
+.formtable_center .formtable .form_div span
+{
+    width: 120px;
+    display: inline-block;
+}
+
+.footer_button 
+{
+ width: 100%;
+ margin-top: 10px;
+ text-align: center;
+}
+
+.clear { clear: both; }
+
+.formtable_small .formtable_center .formtable h1.login_title 
+{
+    text-align: center;
+    padding: 50px 10px;
+    margin: 0px;  
+    background: url(../Images/choukash_retail.png) center center no-repeat;
+}
+.formtable_small .formtable_center .formtable div.login_form
+{
+  text-align: left;
+  padding: 10px 40px;  
+  background: #FFFFFF; 
+}
+
+.full_content {
+    position:relative;
+    left:0;
+    top:0;
+    height:auto;
+    padding:2px;
+    background-color:white;
+    border:solid medium black;
+    font-family:'Segoe UI', Alial, sans-selif, 'Vrinda';
+
+}

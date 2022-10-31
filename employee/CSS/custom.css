@@ -1,0 +1,486 @@
+/* New UI By Masud Zaman */
+/* Reset */
+body
+{
+    font-family: Calibri, Verdana, Sans-Serif, Arial, Tahoma;
+}
+.ui-widget
+{
+    font-size: 11px !important;
+}
+input[type="text"], input[type="password"], select
+{
+    /* border: 1px solid #BBC7CE !important; */
+}
+select
+{
+    /* background: url(../Images/combo_box.png) repeat-x scroll 0 0 transparent; */
+}
+.clearB
+{
+    clear: both;
+}
+.clearL
+{
+    clear: left;
+}
+.clearR
+{
+    clear: right;
+}
+.alignfix
+{
+    min-width: 50%;
+    width: 100%;
+    margin: 0 auto !important;
+    overflow: hidden;
+}
+.floatL
+{
+    float: left !important;
+}
+.floatR
+{
+    float: right !important;
+}
+.alignL
+{
+    text-align: left !important;
+}
+.alignR
+{
+    text-align: right !important;
+}
+.visible
+{
+    display: block;
+}
+/* Window Layout */
+
+.window_holder
+{
+    background: #DCE8EF !important;
+ /*     border: 10px solid #C1D9EA;*/
+    border-left: 10px solid #B3CBDD;
+    border-right: 10px solid #B3CBDD;
+    border-bottom: 10px solid #B3CBDD;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 8px 8px;
+    overflow: hidden;
+}
+.windows
+{
+ /*   border: 1px solid #5e6263;
+    margin-bottom: 10px;*/
+}
+.windows, .window_holder
+{
+}
+.roundAll
+{
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+.roundTop
+{
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.roundTL
+{
+    -webkit-border-top-left-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    border-top-left-radius: 10px;
+}
+.roundTR
+{
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-radius-topright: 10px;
+    border-top-right-radius: 10px;
+}
+.roundBottom
+{
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.roundBL
+{
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-bottom-left-radius: 10px;
+}
+.roundBR
+{
+    -webkit-border-bottom-right-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    border-bottom-right-radius: 10px;
+}
+.title_bar
+{
+    background: #B3CBDD/* url(../Images/title_bar.png) repeat-x scroll 0 0 transparent*/;
+    height: 28px;
+    padding: 6px 8px 0 7px;
+}
+.title_logo
+{
+    vertical-align: bottom;
+}
+.title_name
+{
+    font-weight: bold;
+    padding-left: 6px;
+    font-size: 15px;
+}
+.title_collapse
+{
+    float: right;
+    border: 1px solid #888;
+    background: url(../Images/title_collapse.png) repeat-x scroll 0 0 transparent;
+    color: White;
+    padding: 0px 5px;
+    font-weight: bold;
+    width: 22px;
+    text-align: center;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.left_column, .right_column
+{
+    position: relative;
+    top: 26px;
+}
+.left_column
+{
+    float: left;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+.right_column
+{
+    background: url(../Images/back_main_right.jpg) no-repeat;
+    float: right;
+    width: 300px;
+}
+.column_left
+{
+    float: left;
+    overflow: hidden;
+}
+.column_right
+{
+    float: right;
+    overflow: hidden;
+}
+.Panel
+{
+    float: left;
+    margin-bottom: 10px;
+    margin-right: 12px;
+}
+.form_legend
+{
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+.form_legend, .form_ui
+{
+    background-color: #EDF1F4;
+}
+
+.form_ui
+{
+    padding: 10px 15px;
+    overflow: hidden;
+    width: auto;
+    float: left;
+}
+.banner_small
+{
+    float: right;
+    width: 150px;
+    padding-bottom: 10px;
+}
+.banner_small img
+{
+    /* width: 150px;*/
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    display: block;
+}
+
+.form_ui div
+{
+    float: left;
+}
+.form_ui .elm_group
+{
+    clear: left;
+    padding: 2px;
+}
+
+.form_ui .elm_label
+{
+    width: 100px;
+    font-size: 13px;
+}
+
+.form_ui .elm_separator
+{
+    
+}
+.form_ui .elm_input
+{
+    
+}
+.form_ui .cascaded_elm_group
+{
+    float:right;
+    font-size: 13px;
+}
+.form_ui .cascaded_elm_label
+{
+    padding-left: 11px;
+    padding-right: 5px;
+    font-size: 13px;
+}
+
+.form_ui .cascaded_elm_separator
+{
+    
+}
+.form_ui .cascaded_elm_input
+{
+    
+}
+.date
+{
+    background: url('../Images/calendar_small.png') no-repeat;
+    background-position: right bottom;
+}
+.datagrid
+{
+    margin-top: 11px;
+    min-height: 150px;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+}
+.datagrid table
+{
+   border: 1px solid #a8a8a8;
+   background: #ACACC4;
+   color:#1b1810;
+}
+.datagrid table tr th
+{
+   background: url('../Images/thead.png') repeat-x;
+   color:#1b1810;
+   height: 23px;
+   border: 1px solid #dfe4eb;
+}
+.datagrid table tr td
+{
+   height: 20px;
+   border: 1px solid #dfe4eb;
+   color: #000000;
+}
+
+.datagrid table tr.Even td
+{
+    background: #f2f5fa;
+}
+.datagrid select, .datagrid input 
+{
+   padding: 0px;
+   margin: 0px;
+}
+.datagrid table tr:last-child td table, .datagrid table tr:last-child td table td
+{
+    border: none;
+}
+
+.hidden
+{
+    display: none;
+}
+.top8m
+{
+    margin-top: 8px;
+}
+.left0
+{
+    margin-left: 0;
+    padding-left: 0;
+}
+.right0
+{
+    margin-right: 0;
+    padding-right: 0;
+}
+.event_ctrl
+{
+    padding: 10px 5px;
+}
+.form_ui .ctrl_btn, .event_ctrl .ctrl_btn
+{
+    background: linear-gradient(#F2F2F2, #D0CFD0) repeat scroll 0 0 transparent;
+    border: 1px solid #929294;
+    border-radius: 5px 5px 5px 5px;
+    font-family: Calibri, sans-serif, Verdana,Geneva,sans-serif;
+    font-size: 12px;
+    padding: 3px 10px;
+    text-decoration: none;
+}
+.Expenses
+{
+    width: 100%;
+}
+/* -------- Purchase Entry -------- */
+.PurchaseEntry
+{
+    width: 100%;
+}
+.PurchaseEntry .banner_small, .Sales .banner_small
+{
+    width: 300px !important;
+}
+
+.PurchaseEntry .Panel1fix, .PurchaseEntry .Panel2fix
+{
+    height: 275px;
+}
+.PurchaseEntry .Panel4fix
+{
+    width: 268px;
+}
+/* -------- Sales -------- */
+.Sales
+{
+    width: 100%;
+}
+.Sales .column_left
+{
+    min-width: 770px;
+}
+.Sales .column_right
+{
+    min-width: 325px;
+}
+.Sales .Panel1fix, .Sales .Panel2fix, .Sales .Panel3fix
+{
+    height: 155px; 
+}
+.form_ui .cascaded_elm
+{
+    vertical-align: middle;
+    padding-left: 1px !important;
+}
+.form_ui .cascaded_elm div
+{
+    
+}
+.column_right .Panel
+{
+    float: right;
+    margin-right: 2px !important;
+    margin-bottom: 4px !important;
+}
+.Sales .Panel4fix
+{
+   width: 277px;
+   padding: 14px 0 14px 20px;
+}
+.Sales .Panel2fix
+{
+    padding-left: 8px !important;
+}
+.Sales .Panel2fix div
+{
+    padding-top: 8px;
+}
+
+.Sales .NetAmmount
+{
+    height: 38px;
+}
+.Sales .Panel5fix, .Sales .Panel6fix
+{
+    width: 265px;
+    padding-right: 17px;
+}
+.Sales .Panel5fix .elm_label
+{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.highlightBG
+{
+   background-color: #C1D9EA !important;
+}
+.BGInherit
+{ 
+    background: none repeat scroll 0 0 #DCE8EF !important;
+}
+
+.Sales .save_print
+{
+    padding-top: 14px;
+    text-align: center;
+}
+.Sales .save_print .ctrl_btn
+{
+    font-size: 19px;
+    height: 51px;
+    width: 246px;
+}
+/* -------- Reports -------- */
+.Reports
+{
+    min-width: 1%;
+    width: 500px;
+}
+.Reports .windows
+{
+    margin: 80px auto !important;
+}
+.CurrentStock
+{
+    width: 228px !important;
+}
+.CurrentStock .Panel1fix
+{
+    width: 159px !important;
+}
+.CurrentStock .ctrl_btn
+{
+    font-size: 17px;
+    width: 153px;
+    height: 41px;
+}
+ .Reports .ctrl_btn
+{
+    font-size: 17px;
+}
+.popupWindow
+{
+    background: #000;
+    margin:0 auto;
+    padding: 0 auto;
+}

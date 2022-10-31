@@ -1,0 +1,174 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ConvoMaster.master.cs" Inherits="admin_ConvoMaster_admin" %>
+<%@ Register Assembly="FlashControl" Namespace="Bewise.Web.UI.WebControls" TagPrefix="Bewise" %>
+ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+     <title>Eastern University Web Portal</title>
+     
+      <link href="../Convocation/Content/masterpage.css" rel="stylesheet"/>
+    <link href="../Convocation/Content/blink.css" rel="stylesheet"/>
+    <link rel="shortcut icon" href="http://www.easternuni.edu.bd/image/Other/favicon.ico"/>
+    <link href="../Convocation/Content/Common.css" rel="stylesheet"/>
+    <link href="../Convocation/Content/demo.css" rel="stylesheet"/>
+    <link href="../Convocation/Content/bjqs.css" rel="stylesheet"/>
+    <link href="../Convocation/Content/Home.css" rel="stylesheet"/>
+    <link href="../Convocation/Content/jind.css" rel="stylesheet" type="text/css"/>
+    <link  href="../App_themes/transmenuh.css" type="text/css" rel="stylesheet" />
+    <script language="javascript" type="text/javascript" src="../App_themes/transmenu.js" ></script>
+                     
+    
+</head>
+<body style=" background:#cccccc url(../images/bg.gif); margin-left:0; margin-top:0; margin:0; "  >
+  <form id="form1" runat="server">
+  <div id="header">
+            <div id="middle" style="background-color: #1073CE; left: 0px;">
+                <a href="http://www.easternuni.edu.bd/HomeEU.aspx" style="font-size: 35px; font-weight: bold;
+                    color: #FFFFFF; text-align: center;">
+                    <img src="../OnlineAdmission/Content/WebHeaderEUNew.png" style="z-index: 100; text-align: center;"
+                        alt="Welcome to Eastern University" height="150" width="100%" >
+                    <!-- <a href="HomeEU.aspx"><img src="image/Other/WebBanner_Home_PC.png" style="z-index:100" />-->
+                </a>
+              
+            </div>
+            </div>
+  
+  <div align="center">
+  <center>	
+   <div>
+      <table class="table_main_table"  border="0" id="AutoNumber1" cellpadding="0px" cellspacing="0px" >
+      <tr>  
+          <td style=" width:100%; vertical-align:top; background:url(Content/avatar-blank.jpg) #eeeeef; background:url(../images/bg.gif) #eeeeef; "> 
+              
+                            
+              <div id="content_div"  style="float:right; background-color:White; width:100%; height:100%;">
+                  <asp:ContentPlaceHolder ID="ContentPlaceHolder_tracker" runat="server">
+                  </asp:ContentPlaceHolder>
+                  
+                   <asp:ContentPlaceHolder ID="ContentPlaceHolder_definition" runat="server" >
+                  </asp:ContentPlaceHolder>
+                            
+                  <asp:ContentPlaceHolder ID="ContentPlaceHolder_content" runat="server">
+                  </asp:ContentPlaceHolder>
+              </div>
+              
+              
+          </td>  
+      </tr>
+      
+      <tr>
+        <td style="background-color:#99ccff;">
+          
+            
+        </td>
+      </tr>
+      </table>  
+    </div>
+    
+   	
+  </center>	
+     
+     
+     
+</div>
+
+    <div id="footer" style="border-top: solid thick white; top: -1px;">
+            <div class="position" style="width: 185px">
+                <strong>Contact INFO</strong><br>
+                <br>
+                House 26, Road 5<br>
+                Dhanmondi, Dhaka-1205<br>
+                Phone:+88029676031-5<br>
+                Fax: +8802967 5981<br>
+                Email:registrar@easternuni.edu.bd
+                <br>
+            </div>
+            <div class="position">
+                <strong>About EU</strong>
+                <br>
+                <br>
+                <a href="http://www.easternuni.edu.bd/AboutEU_Profile.aspx">EU Profile</a>
+                <br>
+                <a href="http://www.easternuni.edu.bd/AboutEU_BT.aspx">Board of Trustees</a>
+                <br>
+                <a href="http://www.easternuni.edu.bd/Administration_OC.aspx">Message From the Chairman</a>
+                <br>
+                <a href="http://www.easternuni.edu.bd/Administration_OVC.aspx">Message From the Vice-Chancellor</a>
+                <br>
+                <a href="http://www.easternuni.edu.bd/AboutEU_Linkage.aspx">International Academic Linkages</a>
+                <br>
+                <a href="http://www.easternuni.edu.bd/AboutEU_Advisors.aspx">Internatinal Advisors</a>
+                <br>
+                <a href="http://www.easternuni.edu.bd/Campus%20Map.aspx">Campus Map</a>
+                <br>
+                <a href="http://www.easternuni.edu.bd/Contact%20Us.aspx">Contact Us</a>
+                <br>
+                <br>
+            </div>
+            <div class="position">
+                <strong>Admission</strong>
+                <br>
+                <br>
+                <a href="http://www.easternuni.edu.bd/Admission_Overview.aspx">Overview</a>
+                <br>
+                <a href="http://www.easternuni.edu.bd/Admission_WEU.aspx">Why Study at EU</a>
+                <br>
+                <a href="http://www.easternuni.edu.bd/Admission_UA.aspx">Undergraduate Admission</a>
+                <br>
+                <a href="http://www.easternuni.edu.bd/Admission_GA.aspx">Graduate Admission</a>
+                <br>
+                <a href="http://www.easternuni.edu.bd/Admission_TF.aspx">Tution and Fees</a>
+                <br>
+                <a href="http://www.easternuni.edu.bd/Admission_FAidSch.aspx">Financial Aid &amp; Scholarship</a>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+            <div class="position">
+                <strong>Academics</strong>
+                <br>
+                <br>
+                <a href="http://www.easternuni.edu.bd/Academics_Council.aspx">Academic Councils</a>
+                <br>
+                <a href="http://www.easternuni.edu.bd/Academics_Sys.aspx">The Academic Systems</a>
+                <br>
+                <a href="http://www.easternuni.edu.bd/Academics_Rules.aspx">Academic Rules &amp; Procedures</a>
+                <br>
+                <a href="http://www.easternuni.edu.bd/Academics_Reg.aspx">Registration Procedures</a>
+                <br>
+                <a href="http://www.easternuni.edu.bd/Academics_ClsAtd.aspx">Rules of Class Attendance</a>
+                <br>
+                <a href="http://www.easternuni.edu.bd/Academics_Exm.aspx">Tests and Exams</a>
+                <br>
+                <a href="http://www.easternuni.edu.bd/Academics_Std.aspx">Academic Standing of a Student</a>
+                <br>
+                <a href="http://www.easternuni.edu.bd/Academics_Degree.aspx">Degree Requirements</a>
+                <br>
+                <a href="http://www.easternuni.edu.bd/Academics_UP.aspx">Undergraduate Programs</a>
+                <br>
+                <a href="http://www.easternuni.edu.bd/Academics_GP.aspx">Graduate Programs</a>
+            </div>
+            <div class="position">
+                <strong>Faculties</strong>
+                <br>
+                <br>
+                <a href="http://www.easternuni.edu.bd/Arts_Faculty.aspx">Faculty of Arts</a>
+                <br>
+                <a href="http://www.easternuni.edu.bd/BBA_Faculty.aspx">Faculty of Business Administration</a>
+                <br>
+                <a href="http://www.easternuni.edu.bd/Eng_Faculty.aspx">Faculty of Engineering &amp;
+                    Technology</a>
+                <br>
+                <a href="http://www.easternuni.edu.bd/Law_Faculty.aspx">Faculty of Laws</a>
+            </div>
+            <div style="position: relative; float: left; height: 29px; width: 980px; top: 60px;
+                left: 10px; padding-top: 10px; border-top: solid thin #0d1fde;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color: white;">
+                    Copyright @Eastern University &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;Powered By EUIT</span></strong></div>
+        </div>
+</form>
+</body>
+</html>

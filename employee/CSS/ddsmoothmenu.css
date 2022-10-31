@@ -1,0 +1,122 @@
+﻿.ddsmoothmenu {
+	background: #0072BB;
+	width: 100%;
+	padding: 0px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 10px;
+}
+.ddsmoothmenu ul {
+	float: left;
+	z-index:99999;
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+
+    display: inline-block;
+background-color: #0072BB;
+background-image: -moz-linear-gradient(#0072BB, #0072BB); 
+background-image: -webkit-gradient(linear, left top, left bottom, from(#0072BB), to(#0072BB)); 
+background-image: -webkit-linear-gradient(#0072BB, #0072BB); 
+background-image: -o-linear-gradient(#0072BB, #0072BB);
+background-image: -ms-linear-gradient(#0072BB, #0072BB);
+background-image: linear-gradient(#0072BB, #0072BB);
+-moz-border-radius: 2px;
+-webkit-border-radius: 2px;
+border-radius: 2px;
+-moz-box-shadow: 0 1px 1px #006BB3, 0 1px 0 #006BB3 inset;
+-webkit-box-shadow: 0 1px 1px #006BB3, 0 1px 0 #006BB3 inset;
+box-shadow: 0 1px 1px #006BB3, 0 1px 0 #006BB3 inset;
+}
+.ddsmoothmenu li {
+	margin: 0px;
+	padding: 6px 10px 8px 10px;
+	list-style-type: none;
+	float: left;
+	position: relative;
+	display: inline;
+    border-left: 1px solid #0072BB;
+    border-right: 1px solid #0072BB;
+
+}
+.ddsmoothmenu ul li a {
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 11px;
+     top: 0;
+}
+.ddsmoothmenu ul li:hover 
+{
+    background: #327E04;
+     opacity: 0.75;
+}
+.ddsmoothmenu ul li:last-child { margin-right: 0px; }
+.ddsmoothmenu ul li ul{
+	position: absolute;
+	margin-top: -0px;
+	left: 0;
+	display: none;
+	visibility: hidden;
+	background: none;
+
+}
+.ddsmoothmenu ul li ul li {
+    display: list-item;
+    float: none;
+    text-align: left;
+    left: 0px;
+    border: none;
+    width: 185px;
+    z-index: 9999999;
+    line-height: 20px;
+    padding: 0px; 
+    
+    background: #0072BB url(../Images/ddsmenu_over_back.png) repeat-y;
+     overflow: visible;
+}
+.ddsmoothmenu ul li ul li a{
+	font: normal 10px Verdana;
+	padding: 2px 5px 2px 18px;
+	margin: 0;
+	border: 0;
+	color: #fff;
+    font-size: 11px;
+    font-weight:bold;
+	text-align: left;
+	line-height: 25px;
+}
+.ddsmoothmenu ul li a, .ddsmoothmenu ul li a:hover { text-decoration: none; }
+
+.ddsmoothmenu ul li ul li:hover {
+   background: #327E04;
+}
+.ddsmoothmenu ul li ul li.child_menu:hover {
+	background: url(../Images/menu_arrow.png) no-repeat 155px center #dfdfdf;
+}
+.ddsmoothmenu ul li ul li ul {
+	margin-top: 0px;
+	border: none;
+}
+.ddsmoothmenu ul li ul li ul li {
+	left: 0px;
+	border: none;
+	width: 200px;
+}
+.ddsmoothmenu ul li ul li ul li ul li {
+	left: -1px;
+}
+img.downarrowclass 
+{
+    width: 1px;
+    height: 1px; 
+}
+img.rightarrowclass 
+{
+    width: 4px;
+    height: 7px;
+    float: right;
+    padding: 8px;
+}
+    
+   
