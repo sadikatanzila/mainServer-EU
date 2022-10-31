@@ -1,0 +1,71 @@
+<html>
+<head>
+    <title>Eastern University</title>
+</head>
+<body>
+
+
+
+<form id="payment_gw" name="payment_gw" >
+
+
+<input type="hidden" name="total_amount" value="1150.00" id="total_amount" runat="server" />
+    <input type="hidden" name="store_id" value="easternuni001live"  />
+    <input type="hidden" name="tran_id" value="578e05a14579e" />
+    <input type="hidden" name="success_url" value="https://sandbox.sslcommerz.com/developer/success.php" />
+    <input type="hidden" name="fail_url" value="https://sandbox.sslcommerz.com/developer/fail.php" />
+    <input type="hidden" name="cancel_url" value="https://sandbox.sslcommerz.com/developer/cancel.php" />
+    <input type="hidden" name="version" value="3.00" />
+
+    <!-- Customer Information !-->
+    <input type="hidden" name="cus_name" value="ABC XYZ">
+    <input type="hidden" name="cus_email" value="abc.xyz@mail.com">
+    <input type="hidden" name="cus_add1" value="Address Line One">
+    <input type="hidden" name="cus_add2" value="Address Line Two">
+    <input type="hidden" name="cus_city" value="City Name">
+    <input type="hidden" name="cus_state" value="State Name">
+    <input type="hidden" name="cus_postcode" value="Post Code">
+    <input type="hidden" name="cus_country" value="Country">
+    <input type="hidden" name="cus_phone" value="01111111111">
+    <input type="hidden" name="cus_fax" value="01711111111">
+
+    <!-- Shipping Information !-->
+    <input type="hidden" name="ship_name" value="ABC XYZ">
+    <input type="hidden" name="ship_add1" value="Address Line One">
+    <input type="hidden" name="ship_add2" value="Address Line Two">
+    <input type="hidden" name="ship_city" value="City Name">
+    <input type="hidden" name="ship_state" value="State Name">
+    <input type="hidden" name="ship_postcode" value="Post Code">
+    <input type="hidden" name="ship_country" value="Country">
+
+    <!-- Optional Parameters which will be stored and returned at the end !-->
+    <input type="hidden" id="StudentID" runat="server" name="value_a" value="StudentID">   <!-- Student ID !-->
+    <input type="hidden" id="lblYear" runat="server" name="value_b" value="Year2016">   <!-- Payable Year !-->
+    <input type="hidden" id="lblSemister" runat="server" name="value_c" value="Fall">   <!-- Payable Semester !-->
+    <input type="hidden" id="StdName" runat="server" name="value_d" value="StudentName">   <!-- Student Name !-->
+
+    <!-- SUBMIT REQUEST  !-->
+    <input type="button" id="ssl_pay" name="submit" value="Pay Now" runat="server"
+                                           onclick="btn_Submit_Click" />
+   <!-- <input type="submit" id="ssl_pay" name="submit" value="Pay Now" runat="server" />-->
+</form>
+
+
+
+
+<script>
+    Shaz = window.Shaz || function () {
+                (Shaz.q = Shaz.q || []).push(arguments);
+            };
+    (function () {;
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'https://easy.com.bd/widget_library/widget-eu.js';
+        var x = document.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s, x);
+    })();
+    Shaz('appkey', 'EASTERN-UNI');
+</script>
+</body>
+</html>
