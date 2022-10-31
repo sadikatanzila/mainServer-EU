@@ -1,0 +1,312 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage_attendance.master.cs" Inherits="staffs_advisor_MasterPage_attendance" %>
+
+<%@ Register Assembly="FlashControl" Namespace="Bewise.Web.UI.WebControls" TagPrefix="Bewise" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+     <title>Eastern University Web Portal</title>
+    <link href="../../student/App_themes/jind.css" rel="stylesheet" type="text/css"/>
+    <link  href="../../student/App_themes/transmenuh.css" type="text/css" rel="stylesheet" />
+    <script language="javascript" type="text/javascript" src="../../student/App_themes/transmenu.js" ></script>
+                     
+    
+</head>
+<body style="  margin-left:0; margin-top:0; margin:0; "  >
+  <form id="form1" runat="server">
+  <table width="800px" align="center"><tr><td>
+  <div align="center">
+
+  
+      <div id="mastheadInner" style="width: 800px; height: 134px; " align="center">
+            <table class="MainHeader" id="tblHeader" cellspacing="0" cellpadding="0" width="100%" align="right" border="0" runat="server">
+               <tbody>
+                <tr> 
+                    <td valign="top" align="center" style="height: 12px;  background-position: left 50%; width: 779px; background-repeat: no-repeat;">
+                        &nbsp;</td>
+                </tr>
+                <tr> 
+                    <td valign="top" align="center" style="height: 12px; background-color:#99ccff; background-position: left 50%; width: 779px; background-repeat: no-repeat;">
+                        <img src="../../images1/topimage_student.jpg" /></td>
+                </tr>
+               </tbody>
+            </table>
+          </div>          
+ 
+         <div id="Div2" class="div_menu_top" style="width:800px">
+            <table  id="Table1" style="background:url(../images/bg.gif) #eeeeef; text-align:left;" class="MainHeader" cellspacing="0" cellpadding="0" width="100%" align="right" border="0" runat="server">
+               <tbody>
+                <tr> 
+                    <td style="height: 20px; background-color: #336699;" >
+                        <div id="menu" onclick="return menu_onclick()" style="height: 26px;">
+                            <table>
+                                <tr>
+                                    <td><a id="home" class="mainlevel-trans" href="#">HOME</a></td>
+                                    <td><a id="profile" class="mainlevel-trans" href="#">PROFILE</a></td>
+                                    <td><a id="courses" class="mainlevel-trans" href="../courses/_course_list.aspx">COURSES</a></td>  
+                                     <td><a id="FORMS" class="mainlevel-trans" href="#">FORMS</a></td>                                    
+                                    <td><a id="library" class="mainlevel-trans" href="#">LIBRARY</a></td>
+                                     <td><a id="advisor" class="mainlevel-trans" href="#">ADVISORSHIP</a></td> 
+                                    <td><a id="link" class="mainlevel-trans" href="#">LINKS</a></td>
+                                    <td><a id="EVALUATION" class="mainlevel-trans" href="#">EVALUATION</a></td>
+                                    <td><a id="logout" class="mainlevel-trans" href="../_login.aspx">LOGOUT</a></td>
+                                </tr>
+                            </table>
+                            <img src="../../images1/orange-line.gif" /></div>
+                        
+                        <script type="text/javascript" language="javascript">
+
+                                function menu_onclick() {}
+                                
+                                if (TransMenu.isSupported()) 
+                                {                                   
+                                    var ms = new TransMenuSet(TransMenu.direction.down, 1, 0, TransMenu.reference.bottomLeft);
+    
+	                                var menu0 = ms.addMenu(document.getElementById("home"));
+	                                menu0.addItem("Teacher's Home","../_home.aspx");
+	                                menu0.addItem("EU Home","http://www.easternuni.edu.bd");
+	                                 
+	                                
+                                    
+                                    
+                                   var menu2 = ms.addMenu(document.getElementById("profile"));
+                                   menu2.addItem("Change Password", "../profile/_changePassword.aspx");
+                                   menu2.addItem("Profile", "../profile/_profile.aspx");
+                                   menu2.addItem("Upload Image", "../profile/_uploadPicturet.aspx");
+                                    
+
+                                    //================================================================================================
+                                    var menu3 = ms.addMenu(document.getElementById("library"));
+                                    menu3.addItem("Information","../library/_information.aspx");
+                                    menu3.addItem("Book Search","../library/_book_search.aspx");
+                                    menu3.addItem("Book Requisition","../library/_book_requisition.aspx"); 
+                                   
+                                    
+                                    var menu4 = ms.addMenu(document.getElementById("advisor"));
+                                    menu4.addItem("Show Student", "../advisor/_show_students.aspx");
+                                   
+
+                                    //================================================================================================
+                                    var menu5 = ms.addMenu(document.getElementById("FORMS"));
+                                    menu5.addItem("HR", "../Forms/_formsHR.aspx");
+                                    menu5.addItem("Accounts and Finance", "../Forms/_formsAcntFinance.aspx");
+                                    menu5.addItem("Procurement and Logistics", "../Forms/_formsLogistics.aspx");
+                                    menu5.addItem("Exam Controller’s Office", "../Forms/_formsExamController.aspx");
+                                    menu5.addItem("Dean/ Chairperson/ Coordinator", "../Forms/_formsDean.aspx");
+                                    
+                                    //====================================================================================================
+                                    var menu6 = ms.addMenu(document.getElementById("EVALUATION"));
+                                    menu6.addItem("Teacher Evaluation", "../Evaluation/_show_Evaluation.aspx");
+                                    menu6.addItem("Evaluation Summary", "../Evaluation/_course_teacherEvalSummery.aspx");
+	                                
+	                                 //================================================================================================
+                                    // write drop downs into page
+                                    //==================================================================================================
+                                    // this method writes all the HTML for the menus into the page with document.write(). It must be
+                                    // called within the body of the HTML page.
+                                    //==================================================================================================
+  
+                                    TransMenu.renderAll();
+                                } 
+			                            init1=function(){TransMenu.initialize();}
+			                            if (window.attachEvent) {
+				                            window.attachEvent("onload", init1);
+			                            }else{
+				                            TransMenu.initialize();			
+			                            }
+                              </script> 
+                        
+                    </td>
+                </tr> 
+               </tbody>
+            </table>
+        </div>   
+ <div style="height:12px;">&nbsp;</div>
+    <div>
+      <table class="table_main_table" border="0" id="AutoNumber1" cellpadding="0px" cellspacing="0px" >
+      <tr>  
+          <td style=" vertical-align:top; background:url(../images/bg.gif) #ccccff;  "> 
+             
+            <div  style="float:left; width:25.5%;  height:100%; text-align: center;"> 
+              <table>
+                 <tr>
+                  <td> 
+              
+                  <table border="0" style=" float:left;" cellpadding="0" cellspacing="0" height="1" width="162">
+                      <tr>
+                          <td colspan="2" height="24" rowspan="3" width="19">
+                              <img border="0" height="24" src="../../staffs/images/lcurv.gif" width="19" /></td>
+                          <td bgcolor="#6fb1d9" class="k" height="1" style="width: 228px">
+                              <img border="0" height="1" src="../../staffs/images/spacer(1).gif" width="100%" /></td>
+                          <td align="right" colspan="2" height="24" rowspan="3" width="15">
+                              <img border="0" height="24" src="../../staffs/images/rcurv.gif"  width="15" /></td>
+                      </tr>
+                      <tr>
+                          <td bgcolor="#eef5fa" class="h" height="22" style="width: 228px">
+                              <p align="center"> <font color="#ffa500"><b>HR</b></font></p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td bgcolor="#6fb1d9" class="k" height="1" style="width: 228px">
+                              <img border="0" height="1" src="../../staffs/images/spacer(1).gif"
+                                          width="1" /></td>
+                      </tr>
+                      <tr>
+                          <td bgcolor="#6fb1d9" class="k" height="63" width="1">
+                              <img border="0" height="1" src="../../staffs/images/spacer(1).gif"
+                                          width="1" /></td>
+                          <td bgcolor="white" height="63" width="18">
+                              <img border="0" height="1" src="../../staffs/images/spacer(1).gif"
+                                          width="18" /></td>
+                          <td align="left" bgcolor="#ffffff" height="63" valign="top" style="width: 228px">
+                              <br />
+                              &gt; <a href= "_staffAttendanceaspx.aspx">Attendance Report</a> &nbsp; &nbsp;&nbsp;<br />
+                               &gt; <a href= "_showAttendance.aspx">Faculty wise Attendance Report</a> &nbsp; &nbsp;&nbsp;
+                          </td>
+                          <td bgcolor="white" height="63" width="14">
+                              <p>
+                                  <img border="0" height="1" src="../../staffs/images/spacer(1).gif"
+                                              width="14" /></p>
+                          </td>
+                          <td bgcolor="#6fb1d9" class="k" height="63" width="1">
+                              <img border="0" height="1" src="../../staffs/images/spacer(1).gif"
+                                          width="1" /></td>
+                      </tr>
+                      <tr>
+                          <td align="left" colspan="2" height="1" rowspan="2" valign="top" width="19">
+                              <img border="0" height="15" src="../../staffs/images/blcurv.gif"
+                                          width="19" /></td>
+                          <td bgcolor="white" height="1" style="width: 228px">
+                              <img border="0" height="14" src="../../staffs/images/spacer(1).gif"
+                                          width="1" /></td>
+                          <td align="right" colspan="2" height="1" rowspan="2" valign="top" width="15">
+                              <img border="0" height="15" src="../../staffs/images/brcurv.gif"
+                                          width="15" /></td>
+                      </tr>
+                      <tr>
+                          <td bgcolor="#6fb1d9" class="k" style="width: 228px; height: 1px;">
+                              <img border="0" height="1" src="../../staffs/images/spacer(1).gif"
+                                          width="150" /></td>
+                      </tr>
+                  </table>
+                  
+                    </td>
+                      </tr>                 
+              </table>
+                <table border="0" cellpadding="0" cellspacing="0" height="1" style=""
+                    width="162">
+                    <tr>
+                        <td colspan="2" height="24" rowspan="3" width="19">
+                            <img border="0" height="24" src="../../staffs/images/lcurv.gif" width="19" /></td>
+                        <td bgcolor="#6fb1d9" class="k" height="1" width="228">
+                            <img border="0" height="1" src="../../staffs/images/spacer(1).gif" width="100%" /></td>
+                        <td align="right" colspan="2" height="24" rowspan="3" width="15">
+                            <img border="0" height="24" src="../../staffs/images/rcurv.gif" width="15" /></td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#eef5fa" class="h" height="22" width="228">
+                            <p align="center">
+                                <font color="#ffa500"><b>Notice Board</b></font></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#6fb1d9" class="k" height="1" width="228">
+                            <img border="0" height="1" src="../../staffs/images/spacer(1).gif" width="1" /></td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#6fb1d9" class="k" height="63" width="1">
+                            <img border="0" height="1" src="../../staffs/images/spacer(1).gif" width="1" /></td>
+                        <td bgcolor="white" height="63" width="18">
+                            <img border="0" height="1" src="../../staffs/images/spacer(1).gif" width="18" /></td>
+                        <td align="left" bgcolor="#ffffff" valign="top" width="228">
+                            <br />
+                            <asp:GridView ID="GridView_generalNotice" runat="server" AutoGenerateColumns="False"
+                                CellPadding="4" ForeColor="#333333" GridLines="None" ShowHeader="False" Width="100%">
+                                <Columns>
+                                    <asp:TemplateField>
+                                        <ItemTemplate>
+                                            <asp:Image ID="Image1" runat="server" ImageUrl="~/student/images/link_icons.png" />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:HyperLinkField DataNavigateUrlFields="NOTICE_ID" DataNavigateUrlFormatString="~/staffs/notice/_notice.aspx?code={0}"
+                                        DataTextField="TITLE" NavigateUrl="~/staffs/notice/_notice.aspx" Target="_blank">
+                                        <ItemStyle Font-Bold="False" />
+                                    </asp:HyperLinkField>
+                                </Columns>
+                                <AlternatingRowStyle BackColor="White" BorderColor="Silver" BorderStyle="Inset" BorderWidth="1px" />
+                                <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                                <RowStyle BackColor="#E3EAEB" />
+                                <EditRowStyle BackColor="#7C6F57" />
+                                <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                                <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                                <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                            </asp:GridView>
+                            <br />
+                            <asp:HyperLink ID="more_genNotice" runat="server" Font-Underline="False" NavigateUrl="~/staffs/notice/_generalNotice.aspx"
+                                Width="41px">more....</asp:HyperLink>&nbsp;</td>
+                        <td bgcolor="white" height="63" width="14">
+                            &nbsp;
+                            <p>
+                                <img border="0" height="1" src="../../staffs/images/spacer(1).gif" width="14" /></p>
+                        </td>
+                        <td bgcolor="#6fb1d9" class="k" height="63" width="1">
+                            <img border="0" height="1" src="../../staffs/images/spacer(1).gif" width="1" /></td>
+                    </tr>
+                    <tr>
+                        <td align="left" colspan="2" height="1" rowspan="2" valign="top" width="19">
+                            <img border="0" height="15" src="../../staffs/images/blcurv.gif" width="19" /></td>
+                        <td bgcolor="white" height="1" width="228">
+                            <img border="0" height="14" src="../../staffs/images/spacer(1).gif" width="1" /></td>
+                        <td align="right" colspan="2" height="1" rowspan="2" valign="top" width="15">
+                            <img border="0" height="15" src="../../staffs/images/brcurv.gif" width="15" /></td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#6fb1d9" class="k" height="1" width="228">
+                            <img border="0" height="1" src="../../staffs/images/spacer(1).gif" width="150" /></td>
+                    </tr>
+                </table>
+              
+              </div>     
+              
+                            
+              <div id="content_div" style="float:right; background-color:White; width:74%; height:100%;">
+                  <asp:ContentPlaceHolder ID="ContentPlaceHolder_tracker" runat="server">
+                  </asp:ContentPlaceHolder>
+                  
+                   <asp:ContentPlaceHolder ID="ContentPlaceHolder_definition" runat="server">
+                  </asp:ContentPlaceHolder>
+                            
+                  <asp:ContentPlaceHolder ID="ContentPlaceHolder_content" runat="server">
+                  </asp:ContentPlaceHolder>
+              </div>
+              
+              
+          </td>  
+      </tr>
+      
+      <tr>
+        <td style="background-color:#336699;">
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="footertext" valign="top" style="height: 24px">
+                        Main Campus:</td>
+                    <td class="footertext" style="width: 483px; height: 24px;" valign="top">
+                        House#26, Road 5, Dhanmondi, Dhaka, Bangladesh.Tel: +880.2.9676031-5
+                        <br />
+                        Fax: +88 02 9676031-5, +880.2.9676031-5. Email: info@eastern.edu.bd
+                    </td>
+                </tr>
+            </table>
+            
+        </td>
+      </tr>
+      </table>  
+    </div>
+  	
+</div>
+</td></tr></table>
+</form>
+</body>
+</html>
