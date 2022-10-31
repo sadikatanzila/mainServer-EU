@@ -1,0 +1,287 @@
+﻿body {
+}
+
+#ContentBody {
+
+    
+    overflow:auto;
+    height: inherit;
+}
+
+
+ 
+
+#first {
+    float:left;
+    width:170px;
+    height:inherit;
+    padding:0;
+   
+}
+
+
+#second {
+    margin:0 0 0 170px;
+    height:inherit;
+    padding:5px;
+}
+
+
+
+
+
+
+
+
+
+
+    #second #s_container {
+        padding:15px 20px 30px 20px;
+        font-size:13px;
+        font-family:'Segoe UI', Arial, sans-serif;
+        background-color:white;
+        height:inherit;
+        text-align:justify;
+        min-height:650px;
+        z-index:5000;
+    }
+
+
+  #second #s_container #banner-slideNew 
+{
+    margin-bottom: 60px;
+    width: 750px;
+    height: 400px;
+    
+   
+}
+
+ 
+#second #s_container #banner-slideNew ul.bjqs-controls.v-centered li a {
+    display: block;
+    padding: 2px;
+    background: #fff;
+    color: #808080;
+    text-decoration: none;
+}
+
+#second #s_container #banner-slideNew ul.bjqs-controls.v-centered li a:hover{
+	background:#808080;
+	color:#fff;
+}
+
+#second #s_container #banner-slideNew ol.bjqs-markers li a{
+	padding:4px 7px;
+	background:#808080;
+	color:#fff;
+	margin:5px 1px 0 0;
+	text-decoration: none;
+}
+
+#second #s_container #banner-slideNew ol.bjqs-markers li.active-marker a,
+#second #s_container #banner-slideNew ol.bjqs-markers li a:hover{
+	background: #999;
+}
+
+#second #s_container #banner-slideNew p.bjqs-caption{
+	background: rgba(255,255,255,0.45);
+    height:6px;
+}
+
+
+
+    #second #s_container #heading {
+        font-size:24px;
+        font-weight:600;
+       
+        text-decoration:underline;
+    }
+
+        #second #s_container a {
+            text-decoration:none;
+            color:black;
+            font-size:medium;
+        }
+
+            #second #s_container a:hover {
+                color:red;
+            }
+
+ #second #s_container  #more
+{
+    font-weight: bold;
+    font-size: 15px; 
+    text-decoration: underline;
+}
+#second #s_container #more a 
+        {
+            color: #0000FF;
+            font-size:medium;
+        }
+
+#second #s_container #more a:hover 
+            {
+                color:red;
+            }
+
+
+ #second #s_container  #heading
+{
+    font-weight: bold;
+    font-size: 15px; 
+    text-decoration: underline;
+}
+#second #s_container #heading a 
+        {
+            color: #0000FF;
+            font-size:medium;
+        }
+
+#second #s_container #heading a:hover 
+            {
+                color:red;
+            }
+
+
+
+#second #s_container  #headingArts
+{
+    font-weight: bold;
+    font-size: 15px; 
+    text-decoration: underline;
+}
+#second #s_container #headingArts a 
+        {
+            color: #0000FF;
+            font-size:medium;
+        }
+
+#second #s_container #headingArts a:hover 
+            {
+                color:red;
+            }
+
+
+#second #s_container  #headingLaw
+{
+    font-weight: bold;
+    font-size: 15px; 
+    text-decoration: underline;
+}
+#second #s_container #headingLaw a 
+        {
+            color: #0000FF;
+            font-size:medium;
+        }
+
+#second #s_container #headingLaw a:hover 
+            {
+                color:red;
+            }
+
+
+
+#second #s_container  #HeadingETE
+{
+    font-weight: bold;
+    font-size: 15px; 
+    text-decoration: underline;
+}
+#second #s_container #HeadingETE a 
+        {
+            color: #0000FF;
+            font-size:medium;
+        }
+
+#second #s_container #HeadingETE a:hover 
+            {
+                color:red;
+            }
+
+
+
+#second #s_container  #YunnanH
+{
+    font-weight: bold;
+    font-size: 15px; 
+    text-decoration: underline;
+}
+#second #s_container #YunnanH a 
+        {
+            color: #0000FF;
+            font-size:medium;
+        }
+
+#second #s_container #YunnanH a:hover 
+            {
+                color:red;
+            }
+
+
+#second #s_container  #MUH
+{
+    font-weight: bold;
+    font-size: 15px; 
+    text-decoration: underline;
+}
+#second #s_container #MUH a 
+        {
+            color: #0000FF;
+            font-size:medium;
+        }
+
+#second #s_container #MUH a:hover 
+            {
+                color:red;
+            }
+
+
+
+
+
+ #second #s_container  #s_show {
+             border-style: none;
+             border-color: inherit;
+             border-width: 5px;
+             position:relative;
+             height:349px;
+             background-color:#B7DDE1;
+             top: 2px;
+             left: 67px;
+             width: 410px;
+         }
+#second #s_container #s_show IMG {
+            border-style: none;
+            border-color: inherit;
+            border-width: 5px;
+            position:absolute;
+            top:4px;
+            left:70px;
+            z-index:8;
+            opacity:0.0;
+            height: 342px;
+            width: 400px;
+        }
+
+
+#second #s_container #s_show IMG.active {
+    z-index:10;
+    opacity:1.0;
+}
+#second #s_container r #s_show IMG.active {
+    z-index:10;
+    opacity:1.0;
+}
+#second #s_container #s_show IMG.last-active {
+    z-index:9;
+}
+
+.row
+{
+    margin-bottom: 10px;
+}
+
+.required
+{
+    color: Red;
+}
