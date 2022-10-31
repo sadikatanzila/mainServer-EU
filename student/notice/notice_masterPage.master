@@ -1,0 +1,246 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="notice_masterPage.master.cs" Inherits="student_notice_masterPage" %>
+<%@ Register Assembly="FlashControl" Namespace="Bewise.Web.UI.WebControls" TagPrefix="Bewise" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+     <title>Eastern University Web Portal</title>
+    <link href="../App_themes/jind.css" rel="stylesheet" type="text/css"/>
+    <link  href="../App_themes/transmenuh.css" type="text/css" rel="stylesheet" />
+    <script language="javascript" type="text/javascript" src="../App_themes/transmenu.js" ></script>
+                     
+    
+</head>
+<body style="  margin-left:0; margin-top:0; margin:0; "  >
+  <form id="form1" runat="server">
+  <div align="center">
+  <center>	
+  
+      <div id="mastheadInner" style="width: 800px; height: 120px; " align="center">
+            <table class="MainHeader" id="tblHeader" cellspacing="0" cellpadding="0" width="100%" align="right" border="0" runat="server">
+               <tbody>
+               <tr> 
+                    <td valign="top" align="center" style="height: 5px; ">&nbsp;
+                       </td>
+                </tr>
+                <tr> 
+                    <td valign="top" align="center" style=" height:104px; background-color:#99ccff">
+                       <img height="104" src="../../images1/topimage_student.jpg" />
+                       </td>
+                </tr>
+               </tbody>
+            </table>
+          </div>          
+ 
+         <div id="Div2" class="div_menu_top">
+            <table  id="Table1" style="background:url(../../images/bg.gif) #eeeeef; text-align:left;" class="MainHeader" cellspacing="0" cellpadding="0" width="100%" align="right" border="0" runat="server">
+               <tbody>
+                <tr> 
+                      <td style="height: 30px; background-color: inactivecaption;" >
+                        <div id="menu" onclick="return menu_onclick()" style="height:26px;">
+                            <img src="../../images1/orange-line.gif" /><br />
+                            <table>
+                                <tr>
+                                    <td><a id="home" class="mainlevel-trans" href="">HOME</a></td>
+                                    <td><a id="profile" class="mainlevel-trans" href="#">PROFILE</a></td>
+                                    <td><a id="user_guid" class="mainlevel-trans" href="#">USER GUID</a></td>
+                                    
+                                    <td><a id="course" class="mainlevel-trans" href="#">COURSE</a></td>
+                                    <td><a id="accounts" class="mainlevel-trans" href="#">FINANCE</a></td>
+                                     <td><a id="application_forms" class="mainlevel-trans" href="../StudentForms/_StudentAppForms.aspx" style="color: #000000;">Application Forms</a></td>
+                                   
+                                    <td><a id="library" class="mainlevel-trans" href="#">LIBRARY</a></td>                                   
+                                    <td><a id="logout" class="mainlevel-trans" href="../_login.aspx">LOGOUT</a></td>
+                                </tr>
+                            </table>
+                            <img src="../../images1/orange-line.gif" /></div>
+                        
+                        <script type="text/javascript" language="javascript">
+
+                                function menu_onclick() {}
+                                
+                                if (TransMenu.isSupported()) 
+                                {                                   
+                                    var ms = new TransMenuSet(TransMenu.direction.down, 1, 0, TransMenu.reference.bottomLeft);
+    
+	                                var menu0 = ms.addMenu(document.getElementById("home"));
+	                                menu0.addItem("Student Home","../_home.aspx");
+	                                menu0.addItem("EU Home","http://www.easternuni.edu.bd");
+	                                 
+                                	
+                                    var menu1 = ms.addMenu(document.getElementById("profile"));
+                                    menu1.addItem("Change Password", "../profile/_changePassword.aspx");
+                                    menu1.addItem("Profile", "../profile/_profile.aspx");
+                                    menu1.addItem("Upload Image", "../profile/_uploadPicture.aspx"); 
+	                                
+                                    //================================================================================================
+                                    var menu2 = ms.addMenu(document.getElementById("user_guid"));
+                                    menu2.addItem("Web-portal (Student)", "../userGuid/_userGuidWeb.aspx");
+                                    menu2.addItem("Library", "../userGuid/_userGuidLibrary.aspx");
+                                    menu2.addItem("Laboratory", "../userGuid/_userGuidLab.aspx"); 
+                                    
+
+                                    //================================================================================================
+//                                    var menu3 = ms.addMenu(document.getElementById("academics"));
+//                                     menu3.addItem("Semester Grade Sheet","_semGradeSheet.aspx");
+//                                    menu3.addItem("Completed Cources","_completedCourses.aspx");
+//                                    menu3.addItem("Academic Status","_academic_status.aspx"); 
+                                    
+                                    //================================================================================================
+                                    var menu4 = ms.addMenu(document.getElementById("course"));
+                                    menu4.addItem("Taken Courses", "../course/_takenCourses.aspx");
+                                    menu4.addItem("Course Offering", "../course/_courseOffering.aspx");
+                                    menu4.addItem("Course Advisor", "../course/_course_advisor.aspx"); 
+                                     menu4.addItem("Admit Card", "../AdmitCard/_AdmitCard.aspx"); 
+                                    
+                                    //================================================================================================
+                                    var menu5 = ms.addMenu(document.getElementById("accounts"));
+                                    menu5.addItem("Student Ledger", "../finance/_studentLedger.aspx");
+                                    
+                                    //================================================================================================
+                                    var menu6 = ms.addMenu(document.getElementById("library"));
+                                    menu6.addItem("Book Search", "../library/_student_search_book.aspx");
+                                   // menu6.addItem("Book request", "../library/_student_book_requisition.aspx");  
+                                    
+	                                
+	                                 //================================================================================================
+                                    // write drop downs into page
+                                    //==================================================================================================
+                                    // this method writes all the HTML for the menus into the page with document.write(). It must be
+                                    // called within the body of the HTML page.
+                                    //==================================================================================================
+  
+                                    TransMenu.renderAll();
+                                } 
+			                            init1=function(){TransMenu.initialize();}
+			                            if (window.attachEvent) {
+				                            window.attachEvent("onload", init1);
+			                            }else{
+				                            TransMenu.initialize();			
+			                            }
+                              </script> 
+                        
+                    </td>
+                </tr> 
+               </tbody>
+            </table>
+        </div>   
+ 
+    <div>
+      <table class="table_main_table" width="800px" border="0" id="AutoNumber1" cellpadding="0px" cellspacing="0px" >
+      <tr>  
+          <td style=" width:100%; vertical-align:top; background:url(../images/bg.gif) inactivecaptiontext; "> 
+             
+            <div   style="float:left; width:25.5%;  height:100%;"> 
+              <table>
+                 <tr>
+                  <td> 
+                      <table border="0" cellpadding="0" cellspacing="0" height="1" style="float: left"
+                          width="162">
+                          <tr>
+                              <td colspan="2" height="24" rowspan="3" width="19">
+                                  <img border="0" height="24" src="../images/lcurv.gif" width="19" /></td>
+                              <td bgcolor="#6fb1d9" class="k" height="1" style="width: 228px">
+                                  <img border="0" height="1" src="../images/spacer(1).gif" width="100%" /></td>
+                              <td align="right" colspan="2" height="24" rowspan="3" width="15">
+                                  <img border="0" height="24" src="../images/rcurv.gif" width="15" /></td>
+                          </tr>
+                          <tr>
+                              <td bgcolor="#eef5fa" class="h" height="22" style="width: 228px">
+                                  <p align="center">
+                                      <font color="#ffa500"><b>Notice Board</b></font></p>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td bgcolor="#6fb1d9" class="k" height="1" style="width: 228px">
+                                  <img border="0" height="1" src="../images/spacer(1).gif" width="1" /></td>
+                          </tr>
+                          <tr>
+                              <td bgcolor="#6fb1d9" class="k" height="63" width="1">
+                                  <img border="0" height="1" src="../images/spacer(1).gif" width="1" /></td>
+                              <td bgcolor="white" height="63" width="18">
+                                  <img border="0" height="1" src="../images/spacer(1).gif" width="18" /></td>
+                              <td align="left" bgcolor="#ffffff" height="63" style="width: 228px" valign="top">
+                                  <br />
+                                  &gt;<a href="_generalNotice.aspx">General Notice</a><br />
+                                  &gt;<a href="_studentNotice.aspx">Student Notice</a></td>
+                              <td bgcolor="white" height="63" width="14">
+                                  &nbsp;
+                                  <p>
+                                      <img border="0" height="1" src="../images/spacer(1).gif" width="14" /></p>
+                              </td>
+                              <td bgcolor="#6fb1d9" class="k" height="63" width="1">
+                                  <img border="0" height="1" src="../images/spacer(1).gif" width="1" /></td>
+                          </tr>
+                          <tr>
+                              <td align="left" colspan="2" height="1" rowspan="2" valign="top" width="19">
+                                  <img border="0" height="15" src="../images/blcurv.gif" width="19" /></td>
+                              <td bgcolor="white" height="1" style="width: 228px">
+                                  <img border="0" height="14" src="../images/spacer(1).gif" width="1" /></td>
+                              <td align="right" colspan="2" height="1" rowspan="2" valign="top" width="15">
+                                  <img border="0" height="15" src="../images/brcurv.gif" width="15" /></td>
+                          </tr>
+                          <tr>
+                              <td bgcolor="#6fb1d9" class="k" height="1" style="width: 228px">
+                                  <img border="0" height="1" src="../images/spacer(1).gif" width="150" /></td>
+                          </tr>
+                      </table>
+                  
+                    </td>
+                      </tr>
+                  
+                    
+                  
+                  
+                  
+                  <tr>
+                  <td>
+                </td>
+                  </tr>
+              </table>
+              
+              </div>     
+              
+                            
+              <div id="content_div" style="float:right; background-color:White; width:74%; height:100%;">
+                  <asp:ContentPlaceHolder ID="ContentPlaceHolder_tracker" runat="server">
+                  </asp:ContentPlaceHolder>
+                  
+                   <asp:ContentPlaceHolder ID="ContentPlaceHolder_definition" runat="server">
+                  </asp:ContentPlaceHolder>
+                            
+                  <asp:ContentPlaceHolder ID="ContentPlaceHolder_content" runat="server">
+                  </asp:ContentPlaceHolder>
+              </div>
+              
+              
+          </td>  
+      </tr>
+      
+      <tr>
+        <td style="background-color:inactivecaption;">
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="footertext" valign="top" style="height: 24px">
+                        <span style="color: #ffffff">
+                        Main Campus:</span></td>
+                    <td class="footertext" style="width: 483px; height: 24px;" valign="top">
+                        <span style="color: #ffffff">
+                        House#26, Road 5, Dhanmondi, Dhaka, Bangladesh.Tel: +880.2.9676031-5
+                        <br />
+                        Fax: +88 02 9676031-5, +880.2.9676031-5. Email: info@eastern.edu.bd </span>
+                    </td>
+                </tr>
+            </table>
+            
+        </td>
+      </tr>
+      </table>  
+    </div>
+  </center>		
+</div>
+</form>
+</body>
+</html>
+
